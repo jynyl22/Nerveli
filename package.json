@@ -1,1 +1,17 @@
-{"name":"Nerveli","version":"0.0.1","private":true,"scripts":{"start":"node node_modules/react-native/local-cli/cli.js start"},"dependencies":{"react-native":"0.71.3"}}
+{
+    "name": "Nerveli",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start",
+        "android": "react-native run-android"
+    },
+    "dependencies": {
+        "@react-navigation/native": "^6.1.6",
+        "@react-navigation/stack": "^6.3.16",
+        "react-native": "0.71.3",
+        "react-native-gesture-handler": "^2.9.0",
+        "react-navigation": "^4.4.4",
+        "react-navigation-stack": "^2.10.4"
+    }
+}
