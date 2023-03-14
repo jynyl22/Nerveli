@@ -27,17 +27,20 @@ export default function RadioButton({ data}) {
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     imagesize:{
-        width:20,
-        height:20,
-        paddingRight: 5
+        width: 20,
+        height: 20,
     },
     container:{
+        height:50,
         marginLeft: 35,
         marginRight: 35,
-        marginBottom: 35,
+        marginBottom: 20,
         alignItems: 'center',
         flexDirection: 'row',
-		justifyContent: 'space-between',
+		    justifyContent: 'space-between',
+        backgroundColor: '#EEF5ED',
+        borderRadius: 10
+
     },
   text: {
     fontSize: 18,
@@ -46,23 +49,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   background: {
-    backgroundColor: '#EEF5ED',//#EEF5ED
+    //backgroundColor: 'red',//#EEF5ED
     width: "100%",
     height: "130%",
     flexDirection: 'row',
-    paddingRight:5,
+    paddingRight:15,
+    paddingLeft:15,
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderRadius: 4
   },
   unselected: {
     height: 20,
-	width: 20,
+	  width: 20,
 	borderRadius: 100,
 	borderWidth: 2,
 	borderColor: '#2BB673',
   alignItems: 'center',
 	justifyContent: 'center',
+  
   },
   selected: {
     width: 10,
