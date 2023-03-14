@@ -1,6 +1,6 @@
 import React from 'react';
 import { View,Text, TouchableOpacity } from 'react-native';
-
+import {styles} from ".././App"
 const NPA2 = ({navigation}) =>{
     return(
         <View>
