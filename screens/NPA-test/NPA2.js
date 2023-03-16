@@ -1,21 +1,21 @@
 import React from 'react';
 import { View,Text, TouchableOpacity,StyleSheet } from 'react-native';
-import RadioButton from '../components/buttons/radio_button';
+import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA2 = ({navigation}) =>{
     const data = [
         {value: "No pain",
-        emoji: require("../assets/mood-emojis/happy.png")
+        emoji: require("../../assets/mood-emojis/happy.png")
         },
         {value: "A little painful",
-        emoji:require("../assets/mood-emojis/bored.png")
+        emoji:require("../../assets/mood-emojis/bored.png")
         },
         {value: "A lot of pain",
-        emoji: require("../assets/mood-emojis/sad.png")
+        emoji: require("../../assets/mood-emojis/sad.png")
         },
         {value:"Extremely painful",
-        emoji: require("../assets/mood-emojis/upset.png")
+        emoji: require("../../assets/mood-emojis/upset.png")
         },
     ];
     return(
@@ -26,7 +26,7 @@ const NPA2 = ({navigation}) =>{
                 <RadioButton data={data}/>
             </View>
             <View style = {styles.button}>
-            <TouchableOpacity onPress={() => navigation.navigate('NPA1')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Overview')}>
                 <Text style = {styles.buttonText}>Go to different page</Text>
             </TouchableOpacity>
             </View>
