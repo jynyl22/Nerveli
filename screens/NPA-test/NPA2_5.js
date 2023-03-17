@@ -1,27 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { View,Text, Pressable,StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
+import RadioButton from '../../components/buttons/radio_button';
 
 
-const NPA1_10 = ({navigation}) =>{
-    const [count, setValue] = useState(count ?? 1);
+const NPA2_5 = ({navigation}) =>{
+    const data = [
+        {value: "I did not experience a cold sensation ",
+        emoji: require("../../assets/mood-emojis/calm.png")
+        },
+        {value: "I experienced a cold sensation, but it was not painful",
+        emoji:require("../../assets/mood-emojis/happy.png")
+        },
+        {value: "I experienced a cold sensation, and it was painful ",
+        emoji: require("../../assets/mood-emojis/confident.png")
+        }
+    ];
     return(
         <View style = {styles.container}>
-            <Text style = {styles.baseText}>Part 1.10</Text>
-            <Text style = {styles.baseText}>Okay, last question! How often are you in pain? On a scale of 1-5 with 1 being not often and 5 being very often.  </Text>
+            <Text style = {styles.baseText}>Part 2.1</Text>
+            <Text style = {styles.baseText}>From what you felt in the Cold Detection Test, which one of these options did you feel?</Text>
             <View style = {styles.radiobutton}>
-                <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
-                <Slider style={{margin:30}}
-                step={1}
-                minimumValue={1}
-                maximumValue={5}
-                minimumTrackTintColor="red"
-                maximumTrackTintColor="#000000"
-                value={count}
-                onValueChange={setValue}/>
+                <RadioButton data={data}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_1')}>
+            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_6')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
@@ -45,8 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 200,
-        alignContent: 'center',
+        marginTop: 100
     },
     container:{
         flex:1,
@@ -72,4 +73,4 @@ const styles = StyleSheet.create({
         marginBottom: 36
     }
   });
-export default NPA1_10
+export default NPA2_5

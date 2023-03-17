@@ -2,7 +2,7 @@ import {React,useState} from 'react';
 import { View, Text, Pressable, Image} from 'react-native';
 
 
-export default function RadioButton({ data}) {
+export default function RadioButton({data},props) {
     const [userOption, setUserOption] = useState(null);
     return (
         <View>

@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
          borderRadius: 300/2,
          marginHorizontal: "25%",
          justifyContent: 'center',
+         alignSelf: 'center',
      },
     title: {
         fontFamily: 'Lato',
