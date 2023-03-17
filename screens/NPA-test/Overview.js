@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text, TouchableOpacity, StyleSheet,ScrollView} from 'react-native';
+import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native';
 
 
 const Overview = ({navigation}) =>{
@@ -16,15 +16,30 @@ const Overview = ({navigation}) =>{
                 <Text style={styles.card_text}>First, we will do a survey of general questions about your pain.</Text>
                 <Text style={styles.card_text}>Then, we will introduce you to the Detection and Threshold tests. It's a series of 5 tests to help us understand what your pain type is.</Text>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('NPA2')}>
-                <Text>Go to different page</Text>
-            </TouchableOpacity>
+            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_1')}>
+                <Text style = {styles.buttonfont}>Continue</Text>
+            </Pressable>
             </View>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
+    buttonfont:{
+        color:'white',
+        fontFamily:'Open Sans',
+        fontSize:18
+    },
+    continuebutton:{
+        marginTop:50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 300,
+        height: 49,
+        marginHorizontal:20,
+        borderRadius: 20,
+        backgroundColor: '#2BB673',
+    },
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',

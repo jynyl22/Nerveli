@@ -1,5 +1,5 @@
 import {React,useState} from 'react';
-import { View, Text, TouchableOpacity, Pressable, Image} from 'react-native';
+import { View, Text, Pressable, Image} from 'react-native';
 
 
 export default function RadioButton({ data}) {
@@ -23,6 +23,7 @@ export default function RadioButton({ data}) {
           })}
         </View>
       );
+        
 }
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({

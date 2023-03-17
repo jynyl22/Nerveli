@@ -1,40 +1,49 @@
 import React from 'react';
-import { View,Text, TouchableOpacity,StyleSheet } from 'react-native';
+import { View,Text, Pressable,StyleSheet } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
-const NPA2 = ({navigation}) =>{
+const NPA1_8 = ({navigation}) =>{
     const data = [
-        {value: "No pain",
-        emoji: require("../../assets/mood-emojis/happy.png")
-        },
-        {value: "A little painful",
-        emoji:require("../../assets/mood-emojis/bored.png")
-        },
-        {value: "A lot of pain",
-        emoji: require("../../assets/mood-emojis/sad.png")
-        },
-        {value:"Extremely painful",
+        {value: "More than 6 months",
         emoji: require("../../assets/mood-emojis/upset.png")
         },
+        {value: "Less than 6 months",
+        emoji:require("../../assets/mood-emojis/sad.png")
+        }
+        
     ];
     return(
         <View style = {styles.container}>
-            <Text style = {styles.baseText}>Part 1.1</Text>
-            <Text style = {styles.baseText}>In the past 7 days, how would you rate your pain on average?</Text>
+            <Text style = {styles.baseText}>Part 1.8</Text>
+            <Text style = {styles.baseText}>For how long have you been in pain?</Text>
             <View style = {styles.radiobutton}>
                 <RadioButton data={data}/>
             </View>
             <View style = {styles.button}>
-            <TouchableOpacity onPress={() => navigation.navigate('Overview')}>
-                <Text style = {styles.buttonText}>Go to different page</Text>
-            </TouchableOpacity>
+            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_9')}>
+                <Text style = {styles.buttonfont}>Continue</Text>
+            </Pressable>
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    buttonfont:{
+        color:'white',
+        fontFamily:'Open Sans',
+        fontSize:18
+    },
+    continuebutton:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 300,
+        height: 49,
+        marginHorizontal:50,
+        borderRadius: 20,
+        backgroundColor: '#2BB673',
+    },
     radiobutton:{
         marginTop: 100
     },
@@ -42,6 +51,7 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'column',
         alignContent: 'center',
+        backgroundColor: 'white'
     },
     baseText: {
       color:"black",
@@ -61,4 +71,4 @@ const styles = StyleSheet.create({
         marginBottom: 36
     }
   });
-export default NPA2
+export default NPA1_8
