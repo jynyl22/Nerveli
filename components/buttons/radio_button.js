@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         height: 20,
     },
     container:{
-        height:50,
+        paddingVertical: 20,
+        paddingRight: 20,
         marginLeft: 35,
         marginRight: 35,
         marginBottom: 20,
@@ -41,13 +42,13 @@ const styles = StyleSheet.create({
 		    justifyContent: 'space-between',
         backgroundColor: '#EEF5ED',
         borderRadius: 10
-
     },
   text: {
     fontSize: 18,
     color: 'black',
     fontFamily: 'OpenSans-Medium',
-    textAlign: 'center',
+    textAlign: 'left',
+    paddingRight: 30
   },
   background: {
     //backgroundColor: 'red',//#EEF5ED
@@ -62,17 +63,16 @@ const styles = StyleSheet.create({
   unselected: {
     height: 20,
 	  width: 20,
-	borderRadius: 100,
-	borderWidth: 2,
-	borderColor: '#2BB673',
-  alignItems: 'center',
-	justifyContent: 'center',
-  
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: '#2BB673',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   selected: {
     width: 10,
-	height: 10,
-	borderRadius: 50,
-	backgroundColor: '#2BB673',
+    height: 10,
+    borderRadius: 50,
+    backgroundColor: '#2BB673',
   },
 });
