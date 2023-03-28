@@ -7,18 +7,18 @@ const Overview = ({navigation}) =>{
         <ScrollView>
             <View style={styles.container}>
                 <View style = {styles.circle}>
-                <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
+                    <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
                 </View>
-            <Text style={styles.title}>Time For The Nerveli Pain Assessment!</Text>
-            <Text style={styles.subtitle}>The test is a 15 to 20 minute test, and will be conducted in two parts.</Text>
+                <Text style={styles.title}>Time For The Nerveli Pain Assessment!</Text>
+                <Text style={styles.subtitle}>The test is a 15 to 20 minute test, and will be conducted in two parts.</Text>
 
-            <View style={styles.card}>
-                <Text style={styles.card_text}>First, we will do a survey of general questions about your pain.</Text>
-                <Text style={styles.card_text}>Then, we will introduce you to the Detection and Threshold tests. It's a series of 5 tests to help us understand what your pain type is.</Text>
-            </View>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_1')}>
-                <Text style = {styles.buttonfont}>Continue</Text>
-            </Pressable>
+                <View style={styles.card}>
+                    <Text style={styles.card_text}>First, we will do a survey of general questions about your pain.</Text>
+                    <Text style={styles.card_text}>Then, we will introduce you to the Detection and Threshold tests. It's a series of 5 tests to help us understand what your pain type is.</Text>
+                </View>
+                <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_1')}>
+                    <Text style = {styles.buttonfont}>Continue</Text>
+                </Pressable>
             </View>
         </ScrollView>
     );

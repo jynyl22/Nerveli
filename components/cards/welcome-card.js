@@ -1,37 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Image, View, Text, StyleSheet } from 'react-native';
 
-const WelcomeCard = ({ title, content }) => {
+export const WelcomeCard = ({ title, content }) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.content}>{content}</Text>
+      <Text style={styles.card_text_title}>{title}</Text>
+      <Text style={styles.card_text_description}>{content}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 20,
-    marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    backgroundColor: '#EEF5ED',
+    marginTop: 30,
+    paddingHorizontal: 30
   },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
+  card_text_title: {
+    fontFamily: 'Lato',
+    fontWeight: 800,
+    fontSize: 25,
+    color: '#2B2B2B',
+    marginTop: 50,
+    paddingVertical: 20,
+    alignSelf: 'center'
   },
-  content: {
-    fontSize: 16,
+  card_text_description: {
+    fontFamily: 'Open Sans',
+    fontWeight: 400,
+    fontSize: 20,
+    color: '#2B2B2B',
+    alignSelf: 'center',
   },
 });
 

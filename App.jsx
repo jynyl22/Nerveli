@@ -40,9 +40,10 @@ const App = () => {
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
   contentStyle: { backgroundColor: '#FFFFF' },
+  
   }}>
-    <Stack.Screen name = "HomePage" component={HomePage}/>
     <Stack.Screen name = "WelcomePage" component={WelcomePage}/>
+    <Stack.Screen name = "HomePage" component={HomePage}/>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>
     <Stack.Screen name = "NPA1_2" component={NPA1_2}/>
