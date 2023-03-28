@@ -2,7 +2,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import HomePage from './screens/home-page/HomePage';
-import WelcomePage from './screens/welcome-page/welcome_1';
+import WelcomePage_1 from './screens/welcome-page/welcome_1';
+import WelcomePage_2 from './screens/welcome-page/welcome_2';
+import WelcomePage_3 from './screens/welcome-page/welcome_3';
+import WelcomePage_4 from './screens/welcome-page/welcome_4';
+import WelcomePage_5 from './screens/welcome-page/welcome_5';
 import Overview from './screens/NPA-test/Overview';
 import NPA1_1 from './screens/NPA-test/NPA1_1';
 import NPA1_2 from './screens/NPA-test/NPA1_2';
@@ -35,14 +39,18 @@ import NPA2_17 from './screens/NPA-test/NPA2_17';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="WelcomePage" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
   contentStyle: { backgroundColor: '#FFFFF' },
   
   }}>
-    <Stack.Screen name = "WelcomePage" component={WelcomePage}/>
+    <Stack.Screen name = "WelcomePage_1" component={WelcomePage_1}/>
+    <Stack.Screen name = "WelcomePage_2" component={WelcomePage_2}/>
+    <Stack.Screen name = "WelcomePage_3" component={WelcomePage_3}/>
+    <Stack.Screen name = "WelcomePage_4" component={WelcomePage_4}/>
+    <Stack.Screen name = "WelcomePage_5" component={WelcomePage_5}/>
     <Stack.Screen name = "HomePage" component={HomePage}/>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>

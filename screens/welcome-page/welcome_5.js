@@ -3,22 +3,22 @@ import { Image, View, StyleSheet, ScrollView} from 'react-native';
 import { WelcomeCard } from '../../components/cards/welcome-card'
 
 
-const WelcomePage_1 = ({navigation}) =>{
-    const title = 'Empathy'
-    const description = 'We know that your journey to live a\nmore pain free life can be \nfrustrating. We have experienced it ourselves-but with Nerveli-you are never alone.'
+const WelcomePage_5 = ({navigation}) =>{
+    const title = 'Your Journey Begins'
+    const description = 'A video guided tutorial will show\nyou step by step how our test\n works. So, are you ready to begin\nyour unique journey? We have your\nback!'
 
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Image style={styles.figure} source={require('../../assets/welcome-page/welcome-1.png')}/>
+                <Image style={styles.figure} source={require('../../assets/welcome-page/welcome-5.png')}/>
                 <WelcomeCard
                     title={title}
                     content={description}
                     navigation={navigation}
-                    nextPage='WelcomePage_2'
-                    buttonText='Continue'
+                    buttonText='Finish'
                 ></WelcomeCard>
             </View>
+            
         </ScrollView>
     );
 };
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default WelcomePage_1
+export default WelcomePage_5
