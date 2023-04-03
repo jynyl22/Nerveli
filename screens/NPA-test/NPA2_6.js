@@ -4,7 +4,7 @@ import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native
 
 const NPA2_6 = ({navigation}) =>{
     return(
-        <ScrollView style={{flex:1}}>
+        <ScrollView overScrollMode="never"style={{flex:1}}>
             <View style={styles.container}>
                 <View style = {styles.circle}>
                 <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>

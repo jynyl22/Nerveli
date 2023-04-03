@@ -37,7 +37,7 @@ const NPA1_9 = ({navigation}) =>{
         },
     ];
     return(
-        <ScrollView>
+        <ScrollView overScrollMode="never">
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.9</Text>
             <Text style = {styles.baseText}>What words best describe your pain?</Text>
