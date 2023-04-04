@@ -38,6 +38,7 @@ const App = () => {
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
   contentStyle: { backgroundColor: '#FFFFF' },
+  animation: 'slide_from_right',
   }}>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>
