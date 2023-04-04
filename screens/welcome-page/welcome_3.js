@@ -15,7 +15,7 @@ const WelcomePage_3 = ({navigation}) =>{
                     title={title}
                     content={description}
                     navigation={navigation}
-                    nextPage='WelcomePage_5'
+                    nextPage='WelcomePage_4'
                     buttonText='Continue'
                 ></WelcomeCard>
             </View>
