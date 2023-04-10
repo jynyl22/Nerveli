@@ -6,10 +6,10 @@ import RadioButton from '../../components/buttons/radio_button';
 const NPA1_8 = ({navigation}) =>{
     const data = [
         {value: "More than 6 months",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "😞️"
         },
         {value: "Less than 6 months",
-        emoji:require("../../assets/mood-emojis/sad.png")
+        emoji: "😔️"
         }
         
     ];

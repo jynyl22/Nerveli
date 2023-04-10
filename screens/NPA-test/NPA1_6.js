@@ -6,13 +6,13 @@ import RadioButton from '../../components/buttons/radio_button';
 const NPA1_6 = ({navigation}) =>{
     const data = [
         {value: "18-29 years old",
-        emoji: require("../../assets/mood-emojis/calm.png")
+        emoji: "🤗"
         },
         {value: "30-45 years old",
-        emoji:require("../../assets/mood-emojis/happy.png")
+        emoji: "😆"
         },
         {value: "Over 45 years old",
-        emoji: require("../../assets/mood-emojis/confident.png")
+        emoji: "😎"
         }
     ];
     return(

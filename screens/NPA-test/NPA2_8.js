@@ -6,13 +6,13 @@ import RadioButton from '../../components/buttons/radio_button';
 const NPA2_8 = ({navigation}) =>{
     const data = [
         {value: "I did not experience a heat sensation ",
-        emoji: require("../../assets/mood-emojis/calm.png")
+        emoji: "🙂"
         },
         {value: "I experienced a heat sensation, but it was not painful",
-        emoji:require("../../assets/mood-emojis/happy.png")
+        emoji:"🔥"
         },
         {value: "I experienced a heat sensation, and it was painful ",
-        emoji: require("../../assets/mood-emojis/confident.png")
+        emoji: "😣"
         }
     ];
     return(

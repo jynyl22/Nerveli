@@ -6,16 +6,16 @@ import RadioButton from '../../components/buttons/radio_button';
 const NPA1_1 = ({navigation}) =>{
     const data = [
         {value: "No pain",
-        emoji: require("../../assets/mood-emojis/happy.png")
+        emoji: "😊"
         },
         {value: "A little painful",
-        emoji:require("../../assets/mood-emojis/bored.png")
+        emoji: "😕"
         },
         {value: "A lot of pain",
-        emoji: require("../../assets/mood-emojis/sad.png")
+        emoji: "🤕"
         },
         {value:"Extremely painful",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "😭"
         },
     ];
     return(

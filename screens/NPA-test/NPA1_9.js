@@ -6,34 +6,34 @@ import RadioButton from '../../components/buttons/radio_button';
 const NPA1_9 = ({navigation}) =>{
     const data = [
         {value: "Pins and needles",
-        emoji: require("../../assets/mood-emojis/happy.png")
+        emoji: "📌️"
         },
         {value: "Stinging",
-        emoji:require("../../assets/mood-emojis/bored.png")
+        emoji: "🐝"
         },
         {value: "Sore",
-        emoji: require("../../assets/mood-emojis/sad.png")
+        emoji: "😣"
         },
         {value:"Burning",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "🔥"
         },
         {value:"Sharp",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "🔪"
         },
         {value:"Dull",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "😕"
         },
         {value:"Electrical",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "⚡️"
         },
         {value:"Tender",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "😥"
+        },
+        {value:"Numb",
+        emoji: "😒"
         },
         {value:"Other",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Extremely painful",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "🥲"
         },
     ];
     return(

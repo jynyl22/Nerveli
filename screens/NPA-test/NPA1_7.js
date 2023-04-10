@@ -5,17 +5,17 @@ import RadioButton from '../../components/buttons/radio_button';
 
 const NPA1_7 = ({navigation}) =>{
     const data = [
-        {value: "Female"
-        
+        {value: "Female",
+        emoji: "👩"
         },
-        {value: "Male"
-        
+        {value: "Male",
+        emoji: "👨"
         },
-        {value: "Non-Binary"
-        
+        {value: "Non-Binary",
+        emoji: "👤"
         },
-        {value:"Other"
-        
+        {value:"Other",
+        emoji: "👥"
         },
     ];
     return(

@@ -8,17 +8,15 @@ export default function RadioButton({data},props) {
         <View>
             {data.map((item) => {
                 return (
-                <View style = {styles.container}>
-                    <Pressable style = {styles.background} onPress={() => setUserOption(item.value)}>
-                        <Image style = {styles.imagesize}source={item.emoji}/>
+                    <Pressable style = {item.value === userOption ? styles.containerselected: styles.containerunselected} onPress={() => setUserOption(item.value)}>
+                        <Text style = {styles.emoji}>{item.emoji}</Text>
                         <View style = {styles.background}>
-                        <Text style = {styles.text}> {item.value}</Text>
-                        <View style = {styles.unselected}>
+                        <Text style = {item.value === userOption ? styles.textselected: styles.textunselected}> {item.value}</Text>
+                        <View style = {item.value === userOption ? styles.selectedring: styles.unselectedring}>
                             <View style = {item.value === userOption ? styles.selected : null}/>
                         </View>
                         </View>
                     </Pressable>
-                </View>
             );
           })}
         </View>
@@ -27,11 +25,13 @@ export default function RadioButton({data},props) {
 }
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
-    imagesize:{
-        width: 20,
-        height: 20,
+    emoji:{
+      color: 'black',
+      fontSize: 18,
+      paddingLeft:20,
+      //fontFamily: 'OpenSans-Medium',
     },
-    container:{
+    containerunselected:{
         paddingVertical: 20,
         paddingRight: 20,
         marginLeft: 35,
@@ -40,10 +40,33 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
 		    justifyContent: 'space-between',
-        backgroundColor: '#EEF5ED',
-        borderRadius: 10
+        backgroundColor: 'white',
+        borderRadius: 25,
+        borderColor: '#2BB673',
+        borderWidth: 2
     },
-  text: {
+    containerselected:{
+      paddingVertical: 20,
+      paddingRight: 20,
+      marginLeft: 35,
+      marginRight: 35,
+      marginBottom: 20,
+      alignItems: 'center',
+      flexDirection: 'row',
+		  justifyContent: 'space-between',
+      backgroundColor: '#2BB673',
+      borderRadius: 25,
+      borderColor: '#2BB673',
+      borderWidth: 2
+  },
+  textselected: {
+    fontSize: 18,
+    color: 'white',
+    fontFamily: 'OpenSans-Medium',
+    textAlign: 'left',
+    paddingRight: 30
+  },
+  textunselected: {
     fontSize: 18,
     color: 'black',
     fontFamily: 'OpenSans-Medium',
@@ -52,17 +75,26 @@ const styles = StyleSheet.create({
   },
   background: {
     //backgroundColor: 'red',//#EEF5ED
-    width: "100%",
+    width: "90%",
     height: "130%",
     flexDirection: 'row',
     paddingRight:15,
-    paddingLeft:15,
+    paddingLeft:5,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  unselected: {
-    height: 20,
-	  width: 20,
+  selectedring: {
+    height: 25,
+	  width: 25,
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  unselectedring: {
+    height: 25,
+	  width: 25,
     borderRadius: 100,
     borderWidth: 2,
     borderColor: '#2BB673',
@@ -70,9 +102,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   selected: {
-    width: 10,
-    height: 10,
+    width: 16,
+    height: 15,
     borderRadius: 50,
-    backgroundColor: '#2BB673',
+    backgroundColor: 'white',
   },
 });
