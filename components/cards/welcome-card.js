@@ -1,9 +1,13 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { ProgressDots } from '../progress_dots/progress_dots';
 
-export const WelcomeCard = ({ title, content, nextPage, navigation, buttonText }) => {
+export const WelcomeCard = ({ title, content, nextPage, navigation, buttonText, currentPageIdx }) => {
   return (
     <View style={styles.card}>
+      <View style={styles.ellipses}>
+        <ProgressDots style={styles.ellipses} currentPageIdx={currentPageIdx}/>
+      </View>
       <Text style={styles.card_text_title}>{title}</Text>
       <Text style={styles.card_text_description}>{content}</Text>
 
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: 800,
     fontSize: 25,
     color: '#2B2B2B',
-    marginTop: 50,
+    marginTop: 30,
     paddingVertical: 20,
     alignSelf: 'center'
   },
@@ -54,15 +58,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#2BB673',
   },
   button:{
-      flex: 1,
-      justifyContent: 'flex-end',
-      marginBottom: 36
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 36
   },
   buttonfont:{
-      color:'white',
-      fontFamily:'Open Sans',
-      fontSize:20,
-      fontWeight: 700
+    color:'white',
+    fontFamily:'Open Sans',
+    fontSize:20,
+    fontWeight: 700
+  },
+  ellipses: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 40
   }
 });
 
