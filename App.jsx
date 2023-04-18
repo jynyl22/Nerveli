@@ -35,11 +35,19 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
+import Journal_1 from './screens/journal/Journal_1';
+import Journal_2 from './screens/journal/Journal_2';
+import Journal_3 from './screens/journal/Journal_3';
+import Journal_4 from './screens/journal/Journal_4';
+import Journal_5 from './screens/journal/Journal_5';
+import Journal_6 from './screens/journal/Journal_6';
+import Journal_7 from './screens/journal/Journal_7';
+import Journal_8 from './screens/journal/Journal_8';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="Journal_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
@@ -80,6 +88,14 @@ const App = () => {
     <Stack.Screen name = "NPA2_15" component={NPA2_15}/>
     <Stack.Screen name = "NPA2_16" component={NPA2_16}/>
     <Stack.Screen name = "NPA2_17" component={NPA2_17}/>
+    <Stack.Screen name = "Journal_1" component={Journal_1}/>
+    <Stack.Screen name = "Journal_2" component={Journal_2}/>
+    <Stack.Screen name = "Journal_3" component={Journal_3}/>
+    <Stack.Screen name = "Journal_4" component={Journal_4}/>
+    <Stack.Screen name = "Journal_5" component={Journal_5}/>
+    <Stack.Screen name = "Journal_6" component={Journal_6}/>
+    <Stack.Screen name = "Journal_7" component={Journal_7}/>
+    <Stack.Screen name = "Journal_8" component={Journal_8}/>
 
   </Stack.Navigator>
   );
