@@ -4,8 +4,9 @@ import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native
 
 const HomePage = ({navigation}) =>{
     return(
-        <ScrollView>
-        </ScrollView>
+        <Text style={{fontSize: 50}}>
+            HomePage
+        </Text>
     );
 };
 
