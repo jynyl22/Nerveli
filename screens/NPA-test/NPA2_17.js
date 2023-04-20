@@ -23,7 +23,7 @@ const NPA2_17 = ({navigation}) =>{
                 <RadioButton data={data}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Overview')}>
+            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA_End')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

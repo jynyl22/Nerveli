@@ -8,15 +8,15 @@ const NPA1_10 = ({navigation}) =>{
     return(
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.10</Text>
-            <Text style = {styles.baseText}>Okay, last question! How often are you in pain? On a scale of 1-5 with 1 being not often and 5 being very often.  </Text>
-            <View style = {styles.radiobutton}>
+            <Text style = {styles.baseText}>Okay, last question! How often are you in pain? On a scale of 1-5 with 1 being not often and 5 being very often.</Text>
+            <View style = {styles.slider}>
                 <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
                 <Slider style={{margin:30}}
                 step={1}
                 minimumValue={1}
                 maximumValue={5}
-                minimumTrackTintColor="red"
-                maximumTrackTintColor="#000000"
+                minimumTrackTintColor="#80FF88"
+                maximumTrackTintColor="black"
                 value={count}
                 onValueChange={setValue}/>
             </View>
@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
-    radiobutton:{
-        marginTop: 200,
+    slider:{
+        marginTop:100,
         alignContent: 'center',
     },
     container:{

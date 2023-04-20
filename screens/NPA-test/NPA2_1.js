@@ -12,7 +12,8 @@ const NPA2_1 = ({navigation}) =>{
             <Text style ={{fontFamily: 'Lato',fontWeight:800,textAlign:'center',color:'#2B2B2B',marginTop:40,textAlignVertical: 'center'}}>Part 2:</Text>
             <Text style={styles.title}>Detection and Threshold Tests</Text>
                 <Text style={styles.card_text}>Now, it’s time for the Detection and Threshold Tests. These tests allow us to determine and understand how your pain will affect your day-to-day lifestyle.</Text>
-                <Text style ={{fontFamily: 'Open Sans',fontWeight: 400,fontSize: 20,color: '#2B2B2B',textAlign: 'center',}}>Information and FAQ</Text>
+                <Text style ={{fontFamily: 'Open Sans',fontWeight: 400,fontSize: 20,color: '#2BB673',textAlign: 'center',textDecorationLine: 'underline',
+}}>Information and FAQ</Text>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_2')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>

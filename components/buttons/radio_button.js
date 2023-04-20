@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     width: "90%",
     height: "130%",
     flexDirection: 'row',
-    paddingRight:15,
+    paddingRight:25,
     paddingLeft:5,
     justifyContent: 'space-between',
     alignItems: 'center',

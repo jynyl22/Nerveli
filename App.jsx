@@ -29,11 +29,15 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
+import NPA_End from './screens/NPA-test/NPA_End';
+import NPA_Results from './screens/NPA-test/NPA_Results';
+import NPA_Diagnosis from './screens/NPA-test/NPA_Diagnosis/NPA_Diagnosis';
+import NPA_Relief from './screens/NPA-test/NPA_Diagnosis/NPA_Relief';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="Overview" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="NPA2_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
@@ -68,6 +72,11 @@ const App = () => {
     <Stack.Screen name = "NPA2_15" component={NPA2_15}/>
     <Stack.Screen name = "NPA2_16" component={NPA2_16}/>
     <Stack.Screen name = "NPA2_17" component={NPA2_17}/>
+    <Stack.Screen name = "NPA_End" component={NPA_End} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Results" component={NPA_Results} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Diagnosis" component={NPA_Diagnosis} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Relief" component={NPA_Relief} options={{headerShown: false}}/>
+
 
   </Stack.Navigator>
   );
