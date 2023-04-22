@@ -1,14 +1,18 @@
-import {React,useState} from 'react';
-import { View, Text, Pressable, Image} from 'react-native';
+import {React, useState, useEffect} from 'react';
+import { View, Text, Pressable} from 'react-native';
 
 
-export default function RadioButton({data},props) {
+export default function RadioButton({data, selectAction}) {
     const [userOption, setUserOption] = useState(null);
+
     return (
         <View>
             {data.map((item) => {
                 return (
-                    <Pressable style = {item.value === userOption ? styles.containerselected: styles.containerunselected} onPress={() => setUserOption(item.value)}>
+                    <Pressable 
+                    key={item.emoji}
+                    style = {item.value === userOption ? styles.containerselected: styles.containerunselected} 
+                    onPress={() => {setUserOption(item.value); selectAction();}}>
                         <Text style = {styles.emoji}>{item.emoji}</Text>
                         <View style = {styles.background}>
                         <Text style = {item.value === userOption ? styles.textselected: styles.textunselected}> {item.value}</Text>

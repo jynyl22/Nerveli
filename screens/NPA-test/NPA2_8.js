@@ -1,9 +1,29 @@
-import React from 'react';
-import { View,Text, Pressable,StyleSheet } from 'react-native';
+import {useState} from 'react';
+import { View, Text, Pressable, StyleSheet, Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA2_8 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
     const data = [
         {value: "I did not experience a heat sensation ",
         emoji: "🙂"
@@ -20,10 +40,10 @@ const NPA2_8 = ({navigation}) =>{
             <Text style = {styles.baseText}>Part 2.2</Text>
             <Text style = {styles.baseText}>From what you felt in the Heat Detection Test, which one of these options did you feel?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_9')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA2_9') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

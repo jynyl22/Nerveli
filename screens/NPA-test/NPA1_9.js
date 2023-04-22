@@ -1,9 +1,30 @@
-import React from 'react';
+import {useState} from 'react';
 import { View,Text, Pressable,StyleSheet, ScrollView } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA1_9 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
         {value: "Pins and needles",
         emoji: "📌️"
@@ -42,10 +63,10 @@ const NPA1_9 = ({navigation}) =>{
             <Text style = {styles.baseText}>Part 1.9</Text>
             <Text style = {styles.baseText}>What words best describe your pain?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_10')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_10') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

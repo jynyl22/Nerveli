@@ -1,9 +1,30 @@
-import React from 'react';
+import {useState} from 'react';
 import { View,Text, Pressable,StyleSheet } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA1_7 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
         {value: "Female",
         emoji: "👩"
@@ -23,10 +44,10 @@ const NPA1_7 = ({navigation}) =>{
             <Text style = {styles.baseText}>Part 1.7</Text>
             <Text style = {styles.baseText}>How do you classify your gender?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_8')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_8') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
