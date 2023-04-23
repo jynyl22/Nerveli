@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { View,Text, Pressable,StyleSheet, ScrollView } from 'react-native';
+import { View,Text, Pressable,StyleSheet, ScrollView,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
