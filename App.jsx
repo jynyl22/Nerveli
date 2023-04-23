@@ -37,7 +37,7 @@ import NPA_Relief from './screens/NPA-test/NPA_Diagnosis/NPA_Relief';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="NPA2_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="Overview" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},

@@ -6,25 +6,49 @@ const Overview = ({navigation}) =>{
     return(
         <ScrollView overScrollMode="never">
             <View style={styles.container}>
-                <View style = {styles.circle}>
-                <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
+                    <View style = {styles.circle}>
+                    <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
+                    </View>
+                <Text style={styles.title}>Time For The Nerveli Pain Assessment!</Text>
+                <Text style={styles.subtitle}>The test is a 15 to 20 minute test, and will be conducted in two parts.</Text>
+                <View style={styles.card}>
+                    <View style = {{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+                            <View style = {styles.greencircle}>
+                                <Text style = {styles.emoji}>📝</Text>
+                            </View>
+                            <Text style={styles.card_text}>First, we will do a survey of general questions about your pain.</Text>
+                    </View>
+                    <View style = {{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+                            <View style = {styles.greencircle}>
+                                <Text style = {styles.emoji}>🔎️</Text>
+                            </View>
+                            <Text style={styles.card_text}>Then, we will introduce you to the Detection and Threshold tests. It's a series of 5 tests to help us understand what your pain type is.</Text>
+                    </View>
                 </View>
-            <Text style={styles.title}>Time For The Nerveli Pain Assessment!</Text>
-            <Text style={styles.subtitle}>The test is a 15 to 20 minute test, and will be conducted in two parts.</Text>
-
-            <View style={styles.card}>
-                <Text style={styles.card_text}>First, we will do a survey of general questions about your pain.</Text>
-                <Text style={styles.card_text}>Then, we will introduce you to the Detection and Threshold tests. It's a series of 5 tests to help us understand what your pain type is.</Text>
-            </View>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_1')}>
-                <Text style = {styles.buttonfont}>Continue</Text>
-            </Pressable>
+                <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_1')}>
+                    <Text style = {styles.buttonfont}>Continue</Text>
+                </Pressable>
             </View>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
+    emoji:{
+        fontWeight:'bold',
+        color:'black',
+        fontFamily:'Lato',
+        textAlign:'center',
+        fontSize:38
+    },
+    greencircle:{
+        width:60,
+        height:60,
+        borderRadius:60/2,
+        backgroundColor:'#2BB673',
+        justifyContent:'center',
+        marginLeft:20,
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
@@ -41,10 +65,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     container: {
-        flex: 1,
         backgroundColor: '#FFFFFF',
-        padding: 30,
         justifyContent: 'center',
+        marginHorizontal:20,
     },
      icon :{
          height: 100,
@@ -78,16 +101,20 @@ const styles = StyleSheet.create({
         marginBottom: 40
     },
     card: {
-        backgroundColor: '#EEF5ED',
-        marginHorizontal: 0,
-        paddingHorizontal: 30
+        backgroundColor: '#EEF5ED',//#EEF5ED
+        width:"100%",
+        paddingVertical:10,
+        
     },
     card_text: {
         fontFamily: 'Open Sans',
         fontWeight: 400,
         fontSize: 18,
         color: '#2B2B2B',
-        paddingVertical: 20
+        paddingVertical: 10,
+        flexWrap: 'wrap',
+        flex:1,
+        paddingLeft:10
     }
 
 });
