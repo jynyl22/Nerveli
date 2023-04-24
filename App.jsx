@@ -43,6 +43,7 @@ import Journal_5 from './screens/journal/Journal_5';
 import Journal_6 from './screens/journal/Journal_6';
 import Journal_7 from './screens/journal/Journal_7';
 import Journal_8 from './screens/journal/Journal_8';
+import Journal_9 from './screens/journal/Journal_9';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -50,8 +51,8 @@ const App = () => {
   <Stack.Navigator initialRouteName="Journal_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
-  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
-  contentStyle: { backgroundColor: '#FFFFF' },
+  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
+  contentStyle: { backgroundColor: '#FFFFFF' },
   
   }}>
     <Stack.Screen name = "WelcomePage_1" component={WelcomePage_1}/>
@@ -88,7 +89,7 @@ const App = () => {
     <Stack.Screen name = "NPA2_15" component={NPA2_15}/>
     <Stack.Screen name = "NPA2_16" component={NPA2_16}/>
     <Stack.Screen name = "NPA2_17" component={NPA2_17}/>
-    <Stack.Screen name = "Journal_1" component={Journal_1}/>
+    <Stack.Screen name = "Journal_1" component={Journal_1} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
     <Stack.Screen name = "Journal_2" component={Journal_2}/>
     <Stack.Screen name = "Journal_3" component={Journal_3}/>
     <Stack.Screen name = "Journal_4" component={Journal_4}/>
@@ -96,6 +97,7 @@ const App = () => {
     <Stack.Screen name = "Journal_6" component={Journal_6}/>
     <Stack.Screen name = "Journal_7" component={Journal_7}/>
     <Stack.Screen name = "Journal_8" component={Journal_8}/>
+    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
 
   </Stack.Navigator>
   );

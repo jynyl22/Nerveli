@@ -1,21 +1,31 @@
 import React from 'react';
 import { View,Text,StyleSheet,Pressable, TextInput } from 'react-native';
-import RadioButton from '../../components/buttons/radio_button';
+import * as Progress from 'react-native-progress';
 
 
 const Journal_8 = ({navigation}) =>{
-    const [text, onChangeText] = React.useState('Start writing...');
-    const [number, onChangeNumber]= React.useState('');
+    const [text, onChangeText] = React.useState('');
 
     return(
         <View style = {styles.container}>
+
+        <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={1}
+            width={372}
+        />
+
             <Text style = {styles.baseText}>Any additional notes?</Text>
-           
+
             <TextInput
-                stlye = {styles.input}
-                onChangeText = {onChangeText}
-                value = {number}
+                style={styles.input}
+                onChangeText={onChangeText}
+                value={text}
                 placeholder='Start writing...'
+                multiline={true}
             />
 
             <View style = {styles.button}>
@@ -31,7 +41,8 @@ const styles = StyleSheet.create({
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
-        fontSize:18
+        fontSize:18,
+        fontWeight: '700'
     },
     continuebutton:{
         alignItems: 'center',
@@ -55,17 +66,35 @@ const styles = StyleSheet.create({
       fontFamily: 'Open Sans',
       textAlign: 'center',
       fontSize: 20,
+      marginTop: 66,
       marginRight:20,
       marginLeft:20,
       marginBottom:10
     },
     button:{
         flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36
+        // justifyContent: 'flex-end',
+        marginTop: 62,
     },
     input:{
-        
+        backgroundColor: '#eef5ed',
+        marginTop: 41,
+        marginLeft: 29,
+        marginRight: 26,
+        fontWeight: '700',
+        fontSize: 20,
+        width: 373,
+        height: 477,
+        borderRadius: 20,
+        textAlign: 'left',
+        paddingHorizontal: 25,
+        paddingTop: 16
+    },
+    progress: {
+        position: 'absolute',
+        height: 5,
+        left: 28,
+        marginTop: 23,
     }
   });
 

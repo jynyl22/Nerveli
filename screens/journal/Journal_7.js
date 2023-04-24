@@ -1,32 +1,43 @@
 import React from 'react';
 import { View,Text,StyleSheet,Pressable, ScrollView } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
+import * as Progress from 'react-native-progress';
 
 
 const Journal_7 = ({navigation}) =>{
     const data = [
         {value: "1",
-        emoji: require("../../assets/misc-emojis/red.png")
+        emoji: "🔴"
         },
         {value: "2",
-        emoji: require("../../assets/misc-emojis/orange.png")
+        emoji: "🟠"
         },
         {value: "3",
-        emoji: require("../../assets/misc-emojis/yellow.png")
+        emoji: "🟡"
         },
         {value:"4",
-        emoji: require("../../assets/misc-emojis/green.png")
+        emoji: "🟢"
         },
         {value:"5",
-        emoji: require("../../assets/misc-emojis/blue.png")
+        emoji: "🔵"
         },
         {value:"6",
-        emoji: require("../../assets/misc-emojis/purple.png")
+        emoji: "🟣"
         },
     ];
 
     return(
         <ScrollView>
+
+        <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={337/372}
+            width={372}
+        />
+
         <View style = {styles.container}>
             <Text style = {styles.baseText}>How many did you take?</Text>
             <View style = {styles.radiobutton}>
@@ -46,7 +57,8 @@ const styles = StyleSheet.create({
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
-        fontSize:18
+        fontSize:18,
+        fontWeight: '700'
     },
     continuebutton:{
         alignItems: 'center',
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 100
+        marginTop: 41
     },
     container:{
         flex:1,
@@ -70,15 +82,22 @@ const styles = StyleSheet.create({
       fontFamily: 'Open Sans',
       textAlign: 'center',
       fontSize: 20,
+      marginTop: 66,
       marginRight:20,
       marginLeft:20,
       marginBottom:10
     },
     button:{
         flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36
-    }
+        // justifyContent: 'flex-end',
+        marginBottom: 129
+    },
+    progress: {
+        position: 'absolute',
+        height: 5,
+        left: 28,
+        marginTop: 23,
+    },
   });
 
 export default Journal_7

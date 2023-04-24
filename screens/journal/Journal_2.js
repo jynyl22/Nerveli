@@ -1,41 +1,56 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, ScrollView } from 'react-native';
+import { View,Text,StyleSheet,Pressable, ScrollView, StatusBar } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
+import * as Progress from 'react-native-progress';
 
 
 const Journal_2 = ({navigation}) =>{
     const data = [
         {value: "Happy",
-        emoji: require("../../assets/mood-emojis/blushing.png")
+        emoji: "☺️"
         },
         {value: "Confident",
-        emoji:require("../../assets/mood-emojis/confident.png")
+        emoji: "😎"
         },
         {value: "Excited",
-        emoji: require("../../assets/mood-emojis/excited.png")
+        emoji: "🥳"
         },
         {value:"Calm",
-        emoji: require("../../assets/mood-emojis/calm.png")
+        emoji: "😌"
         },
         {value:"Neutral",
-        emoji: require("../../assets/mood-emojis/bored.png")
+        emoji: "😐"
         },
         {value:"Tired",
-        emoji: require("../../assets/mood-emojis/tired.png")
+        emoji: "😴"
         },
         {value:"Stressed",
-        emoji: require("../../assets/mood-emojis/stressed.png")
+        emoji: "😓"
         },
         {value:"Sad",
-        emoji: require("../../assets/mood-emojis/cry.png")
+        emoji: "😭"
         },
         {value:"Angry",
-        emoji: require("../../assets/mood-emojis/angry.png")
+        emoji: "😡"
         },
     ];
 
     return(
         <ScrollView>
+
+        <StatusBar 
+            barStyle='dark-content'
+        />
+
+        <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={67/372}
+            width={372}
+        />
+        
         <View style = {styles.container}>
             <Text style = {styles.baseText}>How is your mood today?</Text>
             <View style = {styles.radiobutton}>
@@ -55,7 +70,8 @@ const styles = StyleSheet.create({
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
-        fontSize:18
+        fontSize:18,
+        fontWeight: '700'
     },
     continuebutton:{
         alignItems: 'center',
@@ -67,7 +83,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 100
+        marginTop: 38
     },
     container:{
         flex:1,
@@ -75,19 +91,26 @@ const styles = StyleSheet.create({
         alignContent: 'center',
     },
     baseText: {
-      color:"black",
-      fontFamily: 'Open Sans',
-      textAlign: 'center',
-      fontSize: 20,
-      marginRight:20,
-      marginLeft:20,
-      marginBottom:10
+        color:"black",
+        fontFamily: 'Open Sans',
+        textAlign: 'center',
+        fontSize: 20,
+        marginTop: 67,
+        marginRight:20,
+        marginLeft:20,
+        marginBottom:10
     },
     button:{
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 36
-    }
+    },
+    progress: {
+        position: 'absolute',
+        height: 5,
+        left: 28,
+        marginTop: 23,
+    },
   });
 
 export default Journal_2

@@ -1,12 +1,22 @@
 import React, {useState} from 'react';
 import { View,Text, Pressable,StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
-
+import * as Progress from 'react-native-progress';
 
 const Journal_4 = ({navigation}) =>{
     const [count, setValue] = useState(count ?? 1);
     return(
         <View style = {styles.container}>
+
+        <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={187/372}
+            width={372}
+        />
+
             <Text style = {styles.baseText}>How are you feeling today, Jane?</Text>
             <Text style = {styles.baseText}>Rate on a scale of 1-5, 1 being no pain and 5 being severe pain.</Text>
             <View style = {styles.radiobutton}>
@@ -33,7 +43,8 @@ const styles = StyleSheet.create({
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
-        fontSize:18
+        fontSize:18,
+        fontWeight: '700'
     },
     continuebutton:{
         alignItems: 'center',
@@ -59,6 +70,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Open Sans',
       textAlign: 'center',
       fontSize: 20,
+      marginTop: 65,
       marginRight:20,
       marginLeft:20,
       marginBottom:10
@@ -67,6 +79,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 36
-    }
+    },
+    progress: {
+        position: 'absolute',
+        height: 5,
+        left: 28,
+        marginTop: 23,
+    },
   });
+  
 export default Journal_4
