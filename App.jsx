@@ -21,6 +21,7 @@ import NPA1_7 from './screens/NPA-test/NPA1_7';
 import NPA1_8 from './screens/NPA-test/NPA1_8';
 import NPA1_9 from './screens/NPA-test/NPA1_9';
 import NPA1_10 from './screens/NPA-test/NPA1_10';
+import NPA1_11 from './screens/NPA-test/NPA1_11';
 import NPA2_1 from './screens/NPA-test/NPA2_1';
 import NPA2_2 from './screens/NPA-test/NPA2_2';
 import NPA2_3 from './screens/NPA-test/NPA2_3';
@@ -38,6 +39,10 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
+import NPA_End from './screens/NPA-test/NPA_End';
+import NPA_Results from './screens/NPA-test/NPA_Results';
+import NPA_Diagnosis from './screens/NPA-test/NPA_Diagnosis/NPA_Diagnosis';
+import NPA_Relief from './screens/NPA-test/NPA_Diagnosis/NPA_Relief';
 import Journal_1 from './screens/journal/Journal_1';
 import Journal_2 from './screens/journal/Journal_2';
 import Journal_3 from './screens/journal/Journal_3';
@@ -54,9 +59,9 @@ const App = () => {
   <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
-  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
-  contentStyle: { backgroundColor: '#FFFFFF' },
-  
+  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
+  contentStyle: { backgroundColor: '#FFFFF' },
+  animation: 'slide_from_right',
   }}>
     <Stack.Screen name = "WelcomePage_1" component={WelcomePage_1}/>
     <Stack.Screen name = "WelcomePage_2" component={WelcomePage_2}/>
@@ -78,6 +83,7 @@ const App = () => {
     <Stack.Screen name = "NPA1_8" component={NPA1_8}/>
     <Stack.Screen name = "NPA1_9" component={NPA1_9}/>
     <Stack.Screen name = "NPA1_10" component={NPA1_10}/>
+    <Stack.Screen name = "NPA1_11" component={NPA1_11}/>
     <Stack.Screen name = "NPA2_1" component={NPA2_1}/>
     <Stack.Screen name = "NPA2_2" component={NPA2_2}/>
     <Stack.Screen name = "NPA2_3" component={NPA2_3}/>
@@ -95,6 +101,10 @@ const App = () => {
     <Stack.Screen name = "NPA2_15" component={NPA2_15}/>
     <Stack.Screen name = "NPA2_16" component={NPA2_16}/>
     <Stack.Screen name = "NPA2_17" component={NPA2_17}/>
+    <Stack.Screen name = "NPA_End" component={NPA_End} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Results" component={NPA_Results} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Diagnosis" component={NPA_Diagnosis} options={{headerShown: false}}/>
+    <Stack.Screen name = "NPA_Relief" component={NPA_Relief} options={{headerShown: false}}/>
     <Stack.Screen name = "Journal_1" component={Journal_1} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
     <Stack.Screen name = "Journal_2" component={Journal_2}/>
     <Stack.Screen name = "Journal_3" component={Journal_3}/>

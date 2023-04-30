@@ -1,21 +1,42 @@
-import React from 'react';
-import { View,Text,StyleSheet,Pressable } from 'react-native';
+import {useState} from 'react';
+import { View,Text,StyleSheet,Pressable,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA1_1 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
         {value: "No pain",
-        emoji: require("../../assets/mood-emojis/happy.png")
+        emoji: "😊"
         },
         {value: "A little painful",
-        emoji:require("../../assets/mood-emojis/bored.png")
+        emoji: "😕"
         },
         {value: "A lot of pain",
-        emoji: require("../../assets/mood-emojis/sad.png")
+        emoji: "🤕"
         },
         {value:"Extremely painful",
-        emoji: require("../../assets/mood-emojis/upset.png")
+        emoji: "😭"
         },
     ];
     return(
@@ -23,10 +44,10 @@ const NPA1_1 = ({navigation}) =>{
             <Text style = {styles.baseText}>Part 1.1</Text>
             <Text style = {styles.baseText}>In the past 7 days, how would you rate your pain on average?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_2')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_2') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

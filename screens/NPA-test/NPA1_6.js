@@ -1,18 +1,39 @@
-import React from 'react';
-import { View,Text, Pressable,StyleSheet } from 'react-native';
+import {useState} from 'react';
+import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
 const NPA1_6 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
         {value: "18-29 years old",
-        emoji: require("../../assets/mood-emojis/calm.png")
+        emoji: "🤗"
         },
         {value: "30-45 years old",
-        emoji:require("../../assets/mood-emojis/happy.png")
+        emoji: "😆"
         },
         {value: "Over 45 years old",
-        emoji: require("../../assets/mood-emojis/confident.png")
+        emoji: "😎"
         }
     ];
     return(
@@ -20,10 +41,10 @@ const NPA1_6 = ({navigation}) =>{
             <Text style = {styles.baseText}>Part 1.6</Text>
             <Text style = {styles.baseText}>What is your age?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_7')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_7') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

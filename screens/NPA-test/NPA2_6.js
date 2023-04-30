@@ -4,7 +4,7 @@ import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native
 
 const NPA2_6 = ({navigation}) =>{
     return(
-        <ScrollView style={{flex:1}}>
+        <ScrollView overScrollMode="never"style={{flex:1}}>
             <View style={styles.container}>
                 <View style = {styles.circle}>
                 <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
@@ -13,8 +13,18 @@ const NPA2_6 = ({navigation}) =>{
             <Text style={styles.title}>Time For The Heat Dectection Test</Text>
                 <Text style={styles.card_text}>This test will ask you to conduct a test with materials to check your ablilty to feel the cold temperture.</Text>
                 <View style={styles.white_card}>
-                <Text style ={styles.white_card_text}>Washcloth</Text>
-                <Text style ={styles.white_card_text}>Hot water</Text>
+                    <View style = {{flexDirection:'row',alignItems:'center',}}>
+                        <View style = {styles.greencircle}>
+                            <Text style = {styles.emoji}>💧</Text>
+                        </View>
+                        <Text style = {styles.white_card_text}>Washcloth</Text>
+                    </View>
+                    <View style = {{flexDirection:'row',alignItems:'center',paddingTop:20,}}>
+                        <View style = {styles.greencircle}>
+                            <Text style = {styles.emoji}>🔥</Text>
+                        </View>
+                        <Text style = {styles.white_card_text}>Hot water</Text>
+                    </View>
                 </View>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_7')}>
                 <Text style = {styles.buttonfont}>Let’s get started!</Text>
@@ -26,20 +36,32 @@ const NPA2_6 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    emoji:{
+        fontWeight:'bold',
+        color:'black',
+        fontFamily:'Lato',
+        textAlign:'center',
+        fontSize:38
+    },
     white_card:{
         marginHorizontal:20,
-        height:224,
-        marginTop:10,
+        paddingVertical:40,
         backgroundColor: 'white',
     },
+    greencircle:{
+        width:60,
+        height:60,
+        borderRadius:60/2,
+        backgroundColor:'#2BB673',
+        justifyContent:'center',
+        marginLeft:20,
+    },
     white_card_text:{
-        marginTop:40,
-        marginBottom:30,
         fontFamily: 'Open Sans',
         fontWeight: 700,
         fontSize: 20,
         color: '#2B2B2B',
-        textAlign: 'center'
+        paddingLeft:20
     },
     card_text:{
         fontFamily: 'Open Sans',

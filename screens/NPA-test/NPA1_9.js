@@ -1,56 +1,52 @@
-import React from 'react';
-import { View,Text, Pressable,StyleSheet, ScrollView } from 'react-native';
+import {useState} from 'react';
+import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
-const NPA1_9 = ({navigation}) =>{
+const NPA1_8 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
-        {value: "Pins and needles",
-        emoji: require("../../assets/mood-emojis/happy.png")
+        {value: "More than 6 months",
+        emoji: "😞️"
         },
-        {value: "Stinging",
-        emoji:require("../../assets/mood-emojis/bored.png")
-        },
-        {value: "Sore",
-        emoji: require("../../assets/mood-emojis/sad.png")
-        },
-        {value:"Burning",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Sharp",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Dull",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Electrical",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Tender",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Other",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
-        {value:"Extremely painful",
-        emoji: require("../../assets/mood-emojis/upset.png")
-        },
+        {value: "Less than 6 months",
+        emoji: "😔️"
+        }
+        
     ];
     return(
-        <ScrollView>
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.9</Text>
-            <Text style = {styles.baseText}>What words best describe your pain?</Text>
+            <Text style = {styles.baseText}>For how long have you been in pain?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_10')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_9') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
         </View>
-        </ScrollView>
     );
 };
 
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 20
+        marginTop: 100
     },
     container:{
         flex:1,
@@ -96,4 +92,4 @@ const styles = StyleSheet.create({
         marginBottom: 36
     }
   });
-export default NPA1_9
+export default NPA1_8
