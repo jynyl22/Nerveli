@@ -17,9 +17,9 @@ const BodyButtons = ({bodyPoints}, props) => {
         })
         
     }, [selected])
-    useEffect(() => {
-        console.log(active)
-    }, [active])
+    // useEffect(() => {
+    //     console.log(active)
+    // }, [active])
     return (
         <View style={styles.container}>
             {bodyPoints.map((point) => {
