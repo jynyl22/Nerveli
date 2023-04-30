@@ -1,8 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeStack from "./HomeStack.js";
+import HomePage from '../../screens/home-page/HomePage.js';
 import { Text } from "react-native";
 import Svg, {Path} from 'react-native-svg'
 import CustomHomeButton from "../buttons/custom_home_button.js";
-import HomeStack from "./HomeStack.js";
+import Journal_1 from "../../screens/journal/Journal_1.js";
+
 const Tab = createBottomTabNavigator();
 
 //Temporary Dummy pages until other pages are merged
