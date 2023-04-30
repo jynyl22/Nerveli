@@ -33,7 +33,7 @@ const NPA_Diagnosis = ({navigation}) =>{
                     <Text style = {styles.baseText}>Hot and cold sensations, and sometimes pressure, may trigger pain</Text>
                 </View>
                 <View style = {{justifyContent:'center',alignItems:'center',marginTop:30}}>
-                    <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal')}>
+                    <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_1')}>
                         <Text style = {styles.buttonfont}>Visit your Pain Journal</Text>
                     </Pressable>
                 </View>

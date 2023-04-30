@@ -9,17 +9,7 @@ const NPA1_3 = ({navigation}) =>{
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.3</Text>
             <Text style = {styles.baseText}>In the past 7 days, on a scale of 1-5, how much did pain interfere with work around the home?</Text>
-            <View style = {styles.radiobutton}>
-                <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
-                <Slider style={{margin:30}}
-                step={1}
-                minimumValue={1}
-                maximumValue={5}
-                minimumTrackTintColor="red"
-                maximumTrackTintColor="#000000"
-                value={count}
-                onValueChange={setValue}/>
-            </View>
+            {/* <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/> */}
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_4')}>
                 <Text style = {styles.buttonfont}>Continue</Text>

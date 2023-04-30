@@ -33,7 +33,7 @@ const NPA_Relief = ({navigation}) =>{
                     <Text style = {styles.baseText}>Generally you should avoid heat pads, and use ice packs instead on areas that are painful</Text>
                 </View>
                 <View style = {{justifyContent:'center',alignItems:'center',marginTop:30}}>
-                    <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal')}>
+                    <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_1')}>
                         <Text style = {styles.buttonfont}>Visit your Pain Journal</Text>
                     </Pressable>
                 </View>

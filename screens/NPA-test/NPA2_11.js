@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
+import { View,Text, Pressable,StyleSheet,Alert, ScrollView } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
@@ -37,7 +37,7 @@ const NPA2_11 = ({navigation}) =>{
         }
     ];
     return(
-        <View style = {styles.container}>
+        <ScrollView style = {styles.container}>
             <Text style = {styles.baseText}>Part 2.2</Text>
             <Text style = {styles.baseText}>From what you felt in the Heat Detection Test, which one of these options did you feel?</Text>
             <View style = {styles.radiobutton}>
@@ -48,7 +48,7 @@ const NPA2_11 = ({navigation}) =>{
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 100
+        marginTop: 55
     },
     container:{
         flex:1,

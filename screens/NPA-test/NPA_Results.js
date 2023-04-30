@@ -4,7 +4,7 @@ const NPA_Results = ({navigation}) =>{
     return(
         <ScrollView overScrollMode="never">
             <View style = {{backgroundColor:'#EEF5ED',height:350,borderBottomLeftRadius:20,borderBottomRightRadius:20}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Image style = {{marginTop:20,marginLeft:10,}}source={require('../../assets/NPA-Results-pics/back_arrow.png')}></Image >
                     </TouchableOpacity>
                 <View style={styles.container}>

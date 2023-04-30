@@ -17,14 +17,12 @@ const HomePage = ({navigation}) =>{
                         <Text style={styles.recommendations_title}>Today's {'\n'}recommendations</Text>
                         <Image style={styles.woman_icon} source={require('../../assets/home-page/woman.png')}/>
                         <Pressable style = {styles.view_button} onPress={() => navigation.navigate('Recommendations')}> 
-                            {/* Put in real navigation later ^^^^ */}
                             <Text style = {styles.button_text}>View Now</Text>
                         </Pressable>
                     </View>
                 </View>
 
-                <TouchableOpacity>
-                    {/* Put in real navigation later ^^^^ */}
+                <TouchableOpacity onPress={() => navigation.navigate('Journal_1')}>
                     <View style = {styles.journal_card}>
                         <View style = {styles.journal_content}>
                             <Image style={styles.phone_icon} source={require('../../assets/home-page/phone.png')}/>

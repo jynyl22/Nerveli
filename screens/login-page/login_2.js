@@ -25,7 +25,7 @@ const Login_2 = ({navigation}) =>{
                 placeholder='Password'
             />
 
-            <Pressable style = {styles.loginBtn} onPress={() => navigation.navigate('Home')}>
+            <Pressable style = {styles.loginBtn} onPress={() => navigation.navigate('Overview')}>
                 <Text style = {styles.btnText}>Log in</Text>
             </Pressable>
 

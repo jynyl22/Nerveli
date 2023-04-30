@@ -66,7 +66,7 @@ const NPA1_9 = ({navigation}) =>{
                 <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_10') : warnUser())}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_11') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

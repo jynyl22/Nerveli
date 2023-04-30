@@ -1,31 +1,21 @@
 import React, {useState} from 'react';
-import { View,Text, Pressable,StyleSheet } from 'react-native';
+import { View,Text, Pressable,StyleSheet, ScrollView } from 'react-native';
 import Slider from '@react-native-community/slider';
-
+import DraggableBox from '../../components/graph/graph.js';
 
 const NPA1_2 = ({navigation}) =>{
     const [count, setValue] = useState(count ?? 1);
     return(
-        <View style = {styles.container}>
+        <ScrollView style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.2</Text>
             <Text style = {styles.baseText}>In the past 7 days, on a scale of 1-5, how much did pain interfere with your day-to-day activities?</Text>
-            <View style = {styles.radiobutton}>
-                <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
-                <Slider style={{margin:30}}
-                step={1}
-                minimumValue={1}
-                maximumValue={5}
-                minimumTrackTintColor="red"
-                maximumTrackTintColor="#000000"
-                value={count}
-                onValueChange={setValue}/>
-            </View>
+            {/* <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/> */}
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_3')}>
-                <Text style = {styles.buttonfont}>Continue</Text>
-            </Pressable>
+                <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_3')}>
+                    <Text style = {styles.buttonfont}>Continue</Text>
+                </Pressable>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
@@ -65,7 +55,7 @@ const styles = StyleSheet.create({
     },
     button:{
         flex: 1,
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         marginBottom: 36
     }
   });
