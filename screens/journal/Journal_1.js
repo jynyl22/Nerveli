@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, StatusBar, Image } from 'react-native';
+import { View,Text,StyleSheet,Pressable, StatusBar, Image, ScrollView } from 'react-native';
 
 var month = new Date().getMonth() + 1;
 var year = new Date().getFullYear();
@@ -22,7 +22,7 @@ switch(month) {
 
 const Journal_1 = ({navigation}) =>{
     return(
-        <View style = {styles.container}>
+        <ScrollView style = {styles.container}>
             
             <StatusBar
                 barStyle='light-content'
@@ -77,7 +77,7 @@ const Journal_1 = ({navigation}) =>{
                     <Text style = {{fontWeight: 400, color: '#918d8d', marginLeft: 28, marginTop: 108}}>Moderate</Text>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 

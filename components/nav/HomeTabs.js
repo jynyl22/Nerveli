@@ -45,7 +45,7 @@ export default HomeTabs = () => {
         initialRouteName = "Home"
         screenOptions= {barOptions}>
             <Tab.Screen name = "Support" component={DummySupport} options={supportStyle}/>
-            <Tab.Screen name = "Journal" component={DummyJournal} options={journalStyle}/>
+            <Tab.Screen name = "Journal" component={Journal_1} options={journalStyle}/>
             <Tab.Screen name = "Home" component={HomeStack} options={homeStyle}/>
             <Tab.Screen name = "Reward" component={DummyReward} options={rewardStyle}/>
             <Tab.Screen name = "Profile" component={DummyProfile} options={profileStyle}/>

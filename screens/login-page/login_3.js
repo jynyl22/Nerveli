@@ -44,7 +44,7 @@ const Login_3 = ({navigation}) =>{
 
             <Text style = {styles.agree}>By creating an account, you are agreeing to our Terms & Conditions and Privacy Policy</Text>
 
-            <Pressable style = {styles.loginBtn}>
+            <Pressable style = {styles.loginBtn} onPress={() => navigation.navigate('Home')}>
                 <Text style = {styles.btnText}>Sign up</Text>
             </Pressable>
 

@@ -5,12 +5,7 @@ import RecPage from '../../screens/home-page/RecPage';
 
 const Home = createNativeStackNavigator();
 export default HomeStack = () => {
-    return(<Home.Navigator initialRouteName="Home" screenOptions={{title:"NERVELI",
-        headerTitleAlign: 'center',
-        headerShadowVisible: false,
-        headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
-        contentStyle: { backgroundColor: '#FFFFF' },
-        }}>
+    return(<Home.Navigator initialRouteName="Home">
         <Home.Screen name="Home" options={{headerShown:false}} component={HomePage}/>
         <Home.Screen name="Recommendations" component={RecPage}/>
     </Home.Navigator>);

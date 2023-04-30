@@ -38,7 +38,6 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
-import HomeTabs from './components/nav/HomeTabs';
 import Journal_1 from './screens/journal/Journal_1';
 import Journal_2 from './screens/journal/Journal_2';
 import Journal_3 from './screens/journal/Journal_3';
@@ -52,7 +51,7 @@ import Journal_9 from './screens/journal/Journal_9';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="Home" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
@@ -64,7 +63,7 @@ const App = () => {
     <Stack.Screen name = "WelcomePage_3" component={WelcomePage_3}/>
     <Stack.Screen name = "WelcomePage_4" component={WelcomePage_4}/>
     <Stack.Screen name = "WelcomePage_5" component={WelcomePage_5}/>
-    <Stack.Screen name = "Home" component={HomeTabs} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
+    <Stack.Screen name = "Home" component={HomeTabs} options={{headerShown: false}}/>
     <Stack.Screen name = "Login_1" component={Login_1}/>
     <Stack.Screen name = "Login_2" component={Login_2}/>
     <Stack.Screen name = "Login_3" component={Login_3}/>

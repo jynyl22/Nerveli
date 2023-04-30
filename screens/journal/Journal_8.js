@@ -7,7 +7,7 @@ const Journal_8 = ({navigation}) =>{
     const [text, onChangeText] = React.useState('');
 
     return(
-        <View style = {styles.container}>
+        <ScrollView style = {styles.container}>
 
         <Progress.Bar
             style={styles.progress}
@@ -35,7 +35,7 @@ const Journal_8 = ({navigation}) =>{
                 <Text style = {styles.buttonfont}>Finish</Text>
             </Pressable>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
