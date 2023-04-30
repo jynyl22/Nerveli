@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, View, Text, StyleSheet, Pressable, ScrollView} from 'react-native';
-
+import { ProgressDots } from '../../components/progress_dots/progress_dots';
 
 const WelcomePage_4 = ({navigation}) =>{
+    const [currentPageIdx] = useState(3);
+
     return(
         <ScrollView>
             <View style={styles.container}>
                 <Image style={styles.figure} source={require('../../assets/welcome-page/welcome-4.png')}/>
+                <View style={styles.ellipses}>
+                    <ProgressDots style={styles.ellipses} currentPageIdx={currentPageIdx}/>
+                </View>
                 <Text style={styles.title}>Privacy</Text>
                 <Text style={styles.description}>
                     We take your privacy
@@ -69,7 +74,7 @@ const styles = StyleSheet.create({
         fontWeight: 800,
         fontSize: 25,
         color: '#2B2B2B',
-        marginTop: 50,
+        marginTop: 30,
         paddingVertical: 15,
         alignSelf: 'center'
     },
@@ -134,6 +139,11 @@ const styles = StyleSheet.create({
           fontFamily:'Open Sans',
           fontSize:20,
           fontWeight: 700
+      },
+      ellipses:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 40
       }
 });
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, View, StyleSheet, ScrollView} from 'react-native';
 import { WelcomeCard } from '../../components/cards/welcome-card'
-
 
 const WelcomePage_2 = ({navigation}) =>{
     const title = 'Medical Expertise'
     const description = 'Welcome to a cutting edge pain\nmanagement solution developed by\nour team of neurosurgeons that\nprovides daily support.'
+    const [currentPageIdx] = useState(1);
 
     return(
         <ScrollView>
@@ -17,9 +17,9 @@ const WelcomePage_2 = ({navigation}) =>{
                     navigation={navigation}
                     nextPage='WelcomePage_3'
                     buttonText='Continue'
+                    currentPageIdx={currentPageIdx}
                 ></WelcomeCard>
             </View>
-            
         </ScrollView>
     );
 };

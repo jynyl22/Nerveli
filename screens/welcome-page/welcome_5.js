@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, View, StyleSheet, ScrollView} from 'react-native';
 import { WelcomeCard } from '../../components/cards/welcome-card'
 
@@ -6,6 +6,7 @@ import { WelcomeCard } from '../../components/cards/welcome-card'
 const WelcomePage_5 = ({navigation}) =>{
     const title = 'Your Journey Begins'
     const description = 'A video guided tutorial will show\nyou step by step how our test\n works. So, are you ready to begin\nyour unique journey? We have your\nback!'
+    const [currentPageIdx] = useState(4);
 
     return(
         <ScrollView>
@@ -15,7 +16,9 @@ const WelcomePage_5 = ({navigation}) =>{
                     title={title}
                     content={description}
                     navigation={navigation}
+                    nextPage='Login_1'
                     buttonText='Finish'
+                    currentPageIdx={currentPageIdx}
                 ></WelcomeCard>
             </View>
             
