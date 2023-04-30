@@ -1,31 +1,77 @@
-import React, {useState} from 'react';
-import { View,Text, Pressable,StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
+import {useState} from 'react';
+import { View,Text, Pressable,StyleSheet, ScrollView,Alert } from 'react-native';
+import RadioButton from '../../components/buttons/radio_button';
 
 
-const NPA1_10 = ({navigation}) =>{
-    const [count, setValue] = useState(count ?? 1);
+const NPA1_9 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
+    const data = [
+        {value: "Pins and needles",
+        emoji: "📌️"
+        },
+        {value: "Stinging",
+        emoji: "🐝"
+        },
+        {value: "Sore",
+        emoji: "😣"
+        },
+        {value:"Burning",
+        emoji: "🔥"
+        },
+        {value:"Sharp",
+        emoji: "🔪"
+        },
+        {value:"Dull",
+        emoji: "😕"
+        },
+        {value:"Electrical",
+        emoji: "⚡️"
+        },
+        {value:"Tender",
+        emoji: "😥"
+        },
+        {value:"Numb",
+        emoji: "😒"
+        },
+        {value:"Other",
+        emoji: "🥲"
+        },
+    ];
     return(
+        <ScrollView overScrollMode="never">
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.10</Text>
-            <Text style = {styles.baseText}>Okay, last question! How often are you in pain? On a scale of 1-5 with 1 being not often and 5 being very often.</Text>
-            <View style = {styles.slider}>
-                <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
-                <Slider style={{margin:30}}
-                step={1}
-                minimumValue={1}
-                maximumValue={5}
-                minimumTrackTintColor="#80FF88"
-                maximumTrackTintColor="black"
-                value={count}
-                onValueChange={setValue}/>
+            <Text style = {styles.baseText}>What words best describe your pain?</Text>
+            <View style = {styles.radiobutton}>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_1')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_10') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
         </View>
+        </ScrollView>
     );
 };
 
@@ -44,9 +90,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
-    slider:{
-        marginTop:100,
-        alignContent: 'center',
+    radiobutton:{
+        marginTop: 20
     },
     container:{
         flex:1,
@@ -72,4 +117,4 @@ const styles = StyleSheet.create({
         marginBottom: 36
     }
   });
-export default NPA1_10
+export default NPA1_9

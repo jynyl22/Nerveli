@@ -1,9 +1,9 @@
 import {useState} from 'react';
-import { View,Text, Pressable,StyleSheet, ScrollView,Alert } from 'react-native';
+import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 
 
-const NPA1_9 = ({navigation}) =>{
+const NPA1_8 = ({navigation}) =>{
     const [selected, setSelected] = useState(false);
     function userSelection() {
         if (!selected) {
@@ -26,52 +26,27 @@ const NPA1_9 = ({navigation}) =>{
     }
 
     const data = [
-        {value: "Pins and needles",
-        emoji: "📌️"
+        {value: "More than 6 months",
+        emoji: "😞️"
         },
-        {value: "Stinging",
-        emoji: "🐝"
-        },
-        {value: "Sore",
-        emoji: "😣"
-        },
-        {value:"Burning",
-        emoji: "🔥"
-        },
-        {value:"Sharp",
-        emoji: "🔪"
-        },
-        {value:"Dull",
-        emoji: "😕"
-        },
-        {value:"Electrical",
-        emoji: "⚡️"
-        },
-        {value:"Tender",
-        emoji: "😥"
-        },
-        {value:"Numb",
-        emoji: "😒"
-        },
-        {value:"Other",
-        emoji: "🥲"
-        },
+        {value: "Less than 6 months",
+        emoji: "😔️"
+        }
+        
     ];
     return(
-        <ScrollView overScrollMode="never">
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.9</Text>
-            <Text style = {styles.baseText}>What words best describe your pain?</Text>
+            <Text style = {styles.baseText}>For how long have you been in pain?</Text>
             <View style = {styles.radiobutton}>
                 <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_10') : warnUser())}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_9') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
         </View>
-        </ScrollView>
     );
 };
 
@@ -91,7 +66,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2BB673',
     },
     radiobutton:{
-        marginTop: 20
+        marginTop: 100
     },
     container:{
         flex:1,
@@ -117,4 +92,4 @@ const styles = StyleSheet.create({
         marginBottom: 36
     }
   });
-export default NPA1_9
+export default NPA1_8

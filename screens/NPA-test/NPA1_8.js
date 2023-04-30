@@ -1,48 +1,23 @@
-import {useState} from 'react';
-import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
-import RadioButton from '../../components/buttons/radio_button';
-
+import React from 'react';
+import { View, Text, Pressable, StyleSheet, ImageBackground} from 'react-native';
+import BodyButtons from '../../components/buttons/body_button';
 
 const NPA1_8 = ({navigation}) =>{
-    const [selected, setSelected] = useState(false);
-    function userSelection() {
-        if (!selected) {
-            setSelected(true);
-        }
-    }
-
-    function warnUser() {
-        Alert.alert(
-            "Error",
-            "Please select an option.",
-            [
-                {
-                    text: "OK",
-                    style: "cancel"
-                },
-            ],
-            {cancelable: true}
-        )
-    }
-
-    const data = [
-        {value: "More than 6 months",
-        emoji: "😞️"
-        },
-        {value: "Less than 6 months",
-        emoji: "😔️"
-        }
-        
-    ];
     return(
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.8</Text>
-            <Text style = {styles.baseText}>For how long have you been in pain?</Text>
-            <View style = {styles.radiobutton}>
-                <RadioButton data={data} selectAction={userSelection}/>
+            <Text style = {styles.baseText}>Using this body map, please show us where you have pain.</Text>
+            <View style = {styles.imgView}>
+                <ImageBackground
+                    style={styles.img}
+                    source={require('../../assets/images/bodymap.jpg')}
+                    >
+                        <BodyButtons bodyPoints={bodyPoints}/>
+                </ImageBackground>
             </View>
+            
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => (selected? navigation.navigate('NPA1_9') : warnUser())}>
+            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_9')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
@@ -50,7 +25,93 @@ const NPA1_8 = ({navigation}) =>{
     );
 };
 
+const bodyPoints = [
+    {
+        id: 0,
+        name: 'head',
+        margLeft: 109,
+        margTop: 28
+    },
+    {
+        id: 1,
+        name: 'leftShoulder',
+        margLeft: 65,
+        margTop: 88
+    },
+    {
+        id: 2,
+        name: 'rightShoulder',
+        margLeft: 153,
+        margTop: 88
+    },
+    {
+        id: 3,
+        name: 'chest',
+        margLeft: 109,
+        margTop: 110
+    },
+    {
+        id: 4,
+        name: 'leftElbow',
+        margLeft: 60,
+        margTop: 150
+    },
+    {
+        id: 5,
+        name: 'rightElbow',
+        margLeft: 158,
+        margTop: 150
+    },
+    {
+        id: 6,
+        name: 'coreHips',
+        margLeft: 94,
+        margTop: 179,
+        wide: true
+    },
+    {
+        id: 7,
+        name: 'leftWrist',
+        margLeft: 45,
+        margTop: 205
+    },
+    {
+        id: 8,
+        name: 'rightWrist',
+        margLeft: 173,
+        margTop: 205
+    },
+    // {
+    //     id: 9,
+    //     name: 'groin',
+    //     margLeft: 109,
+    //     margTop: 220
+    // },
+    {
+        id: 10,
+        name: 'knees',
+        margLeft: 94,
+        margTop: 285,
+        wide: true
+    },
+    {
+        id: 11,
+        name: 'ankles',
+        margLeft: 94,
+        margTop: 370,
+        wide: true
+    },
+];
+
 const styles = StyleSheet.create({
+    unselected:{
+        backgroundColor: 'green',
+        opacity: 0.5
+    },
+    selected: {
+        backgroundColor: '#9d1600',
+        opacity: 0.85
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
@@ -65,14 +126,25 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
-    radiobutton:{
-        marginTop: 100
+    imgView:{
+        flex: 7,
+        flexWrap: 'wrap',
+        alignContent : 'center',
+        width: 230,
+        height: 429,
+        resizeMode: 'center'
+    },
+    img:{
+        width: 230,
+        height: 429
     },
     container:{
         flex:1,
         flexDirection: 'column',
-        alignContent: 'center',
-        backgroundColor: 'white'
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: '100%',
+        height: '100%',
     },
     baseText: {
       color:"black",
@@ -82,9 +154,6 @@ const styles = StyleSheet.create({
       marginRight:20,
       marginLeft:20,
       marginBottom:10
-    },
-    buttonText:{
-        textAlign: 'center',
     },
     button:{
         flex: 1,

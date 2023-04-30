@@ -12,6 +12,7 @@ import NPA1_7 from './screens/NPA-test/NPA1_7';
 import NPA1_8 from './screens/NPA-test/NPA1_8';
 import NPA1_9 from './screens/NPA-test/NPA1_9';
 import NPA1_10 from './screens/NPA-test/NPA1_10';
+import NPA1_11 from './screens/NPA-test/NPA1_11';
 import NPA2_1 from './screens/NPA-test/NPA2_1';
 import NPA2_2 from './screens/NPA-test/NPA2_2';
 import NPA2_3 from './screens/NPA-test/NPA2_3';
@@ -55,6 +56,7 @@ const App = () => {
     <Stack.Screen name = "NPA1_8" component={NPA1_8}/>
     <Stack.Screen name = "NPA1_9" component={NPA1_9}/>
     <Stack.Screen name = "NPA1_10" component={NPA1_10}/>
+    <Stack.Screen name = "NPA1_11" component={NPA1_11}/>
     <Stack.Screen name = "NPA2_1" component={NPA2_1}/>
     <Stack.Screen name = "NPA2_2" component={NPA2_2}/>
     <Stack.Screen name = "NPA2_3" component={NPA2_3}/>
