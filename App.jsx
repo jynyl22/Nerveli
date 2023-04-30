@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import HomePage from './screens/home-page/HomePage';
+import HomeTabs from './components/nav/HomeTabs';
 import WelcomePage_1 from './screens/welcome-page/welcome_1';
 import WelcomePage_2 from './screens/welcome-page/welcome_2';
 import WelcomePage_3 from './screens/welcome-page/welcome_3';
@@ -38,15 +39,24 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
+import Journal_1 from './screens/journal/Journal_1';
+import Journal_2 from './screens/journal/Journal_2';
+import Journal_3 from './screens/journal/Journal_3';
+import Journal_4 from './screens/journal/Journal_4';
+import Journal_5 from './screens/journal/Journal_5';
+import Journal_6 from './screens/journal/Journal_6';
+import Journal_7 from './screens/journal/Journal_7';
+import Journal_8 from './screens/journal/Journal_8';
+import Journal_9 from './screens/journal/Journal_9';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="Home" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
-  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
-  contentStyle: { backgroundColor: '#FFFFF' },
+  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
+  contentStyle: { backgroundColor: '#FFFFFF' },
   
   }}>
     <Stack.Screen name = "WelcomePage_1" component={WelcomePage_1}/>
@@ -54,10 +64,10 @@ const App = () => {
     <Stack.Screen name = "WelcomePage_3" component={WelcomePage_3}/>
     <Stack.Screen name = "WelcomePage_4" component={WelcomePage_4}/>
     <Stack.Screen name = "WelcomePage_5" component={WelcomePage_5}/>
+    <Stack.Screen name = "Home" component={HomeTabs} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
     <Stack.Screen name = "Login_1" component={Login_1}/>
     <Stack.Screen name = "Login_2" component={Login_2}/>
     <Stack.Screen name = "Login_3" component={Login_3}/>
-    <Stack.Screen name = "HomePage" component={HomePage}/>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>
     <Stack.Screen name = "NPA1_2" component={NPA1_2}/>
@@ -86,6 +96,15 @@ const App = () => {
     <Stack.Screen name = "NPA2_15" component={NPA2_15}/>
     <Stack.Screen name = "NPA2_16" component={NPA2_16}/>
     <Stack.Screen name = "NPA2_17" component={NPA2_17}/>
+    <Stack.Screen name = "Journal_1" component={Journal_1} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
+    <Stack.Screen name = "Journal_2" component={Journal_2}/>
+    <Stack.Screen name = "Journal_3" component={Journal_3}/>
+    <Stack.Screen name = "Journal_4" component={Journal_4}/>
+    <Stack.Screen name = "Journal_5" component={Journal_5}/>
+    <Stack.Screen name = "Journal_6" component={Journal_6}/>
+    <Stack.Screen name = "Journal_7" component={Journal_7}/>
+    <Stack.Screen name = "Journal_8" component={Journal_8}/>
+    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}}}/>
 
   </Stack.Navigator>
   );
