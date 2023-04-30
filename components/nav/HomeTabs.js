@@ -3,6 +3,7 @@ import HomePage from '../../screens/home-page/HomePage.js';
 import { Text } from "react-native";
 import Svg, {Path} from 'react-native-svg'
 import CustomHomeButton from "../buttons/custom_home_button.js";
+import HomeStack from "./HomeStack.js";
 const Tab = createBottomTabNavigator();
 
 //Temporary Dummy pages until other pages are merged
@@ -43,7 +44,7 @@ export default HomeTabs = () => {
         screenOptions= {barOptions}>
             <Tab.Screen name = "Support" component={DummySupport} options={supportStyle}/>
             <Tab.Screen name = "Journal" component={DummyJournal} options={journalStyle}/>
-            <Tab.Screen name = "Home" component={HomePage} options={homeStyle}/>
+            <Tab.Screen name = "Home" component={HomeStack} options={homeStyle}/>
             <Tab.Screen name = "Reward" component={DummyReward} options={rewardStyle}/>
             <Tab.Screen name = "Profile" component={DummyProfile} options={profileStyle}/>
         </Tab.Navigator>

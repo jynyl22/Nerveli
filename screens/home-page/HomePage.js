@@ -16,7 +16,7 @@ const HomePage = ({navigation}) =>{
                         <Text style={styles.recommendations_date}>August 11, 2022</Text>
                         <Text style={styles.recommendations_title}>Today's {'\n'}recommendations</Text>
                         <Image style={styles.woman_icon} source={require('../../assets/home-page/woman.png')}/>
-                        <Pressable style = {styles.view_button}> 
+                        <Pressable style = {styles.view_button} onPress={() => navigation.navigate('Recommendations')}> 
                             {/* Put in real navigation later ^^^^ */}
                             <Text style = {styles.button_text}>View Now</Text>
                         </Pressable>
