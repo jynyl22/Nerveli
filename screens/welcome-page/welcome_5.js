@@ -16,6 +16,7 @@ const WelcomePage_5 = ({navigation}) =>{
                     title={title}
                     content={description}
                     navigation={navigation}
+                    nextPage='Login_1'
                     buttonText='Finish'
                     currentPageIdx={currentPageIdx}
                 ></WelcomeCard>

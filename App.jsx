@@ -7,6 +7,9 @@ import WelcomePage_2 from './screens/welcome-page/welcome_2';
 import WelcomePage_3 from './screens/welcome-page/welcome_3';
 import WelcomePage_4 from './screens/welcome-page/welcome_4';
 import WelcomePage_5 from './screens/welcome-page/welcome_5';
+import Login_1 from './screens/login-page/login_1';
+import Login_2 from './screens/login-page/login_2';
+import Login_3 from './screens/login-page/login_3';
 import Overview from './screens/NPA-test/Overview';
 import NPA1_1 from './screens/NPA-test/NPA1_1';
 import NPA1_2 from './screens/NPA-test/NPA1_2';
@@ -51,6 +54,9 @@ const App = () => {
     <Stack.Screen name = "WelcomePage_3" component={WelcomePage_3}/>
     <Stack.Screen name = "WelcomePage_4" component={WelcomePage_4}/>
     <Stack.Screen name = "WelcomePage_5" component={WelcomePage_5}/>
+    <Stack.Screen name = "Login_1" component={Login_1}/>
+    <Stack.Screen name = "Login_2" component={Login_2}/>
+    <Stack.Screen name = "Login_3" component={Login_3}/>
     <Stack.Screen name = "HomePage" component={HomePage}/>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>
