@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, StatusBar, Image } from 'react-native';
+import { View,Text,StyleSheet,Pressable, StatusBar, Image, ScrollView } from 'react-native';
 
 var month = new Date().getMonth() + 1;
 var day = new Date().getDate();
@@ -21,20 +21,65 @@ switch(month) {
     default: monthName = 'invalid'
 }
 
+const painType = 'minimal'
+const interference = 'does not interfere with daily activities'
+const mood = ['😴  Tired', '😌  Calm']
+const activities = ['🏠  Household chores', '🥾  Hiking']
+const medication = '🙅  Not today'
+
 const Journal_9 = ({navigation}) =>{
     return(
-        <View style = {styles.container}>
+        <ScrollView style = {styles.container} overScrollMode='never'>
+
             <StatusBar
                 barStyle='light-content'
             />
             <View style = {styles.header}>
                 <Text style = {styles.headerText}>{monthName} {day}, {year}</Text>
             </View>
-            <Text style = {[styles.subHeaderText, {marginTop: 33}]}>Your pain scale</Text>
-            <Text style = {[styles.subHeaderText, {marginTop: 39}]}>Your moon</Text>
-            <Text style = {[styles.subHeaderText, {marginTop: 38}]}>Your activities</Text>
-            <Text style = {[styles.subHeaderText, {marginTop: 38}]}>Your medications</Text>
-        </View>
+            <Text style = {[styles.subHeaderText, {marginTop: 33, marginLeft: 28}]}>Your pain scale</Text>
+            <View style = {styles.bubble}>
+                <Text style = {styles.bubbleText}>Your pain was {painType} and {interference}.</Text>
+            </View>
+            <View style = {styles.subHeader}>
+                <Text style = {[styles.subHeaderText, {marginTop: 1}]}>Your mood</Text>
+                    <View style = {{flexDirection: 'row'}}>
+                    <Image style = {{width: 15, height: 14.23}} source={require('../../assets/mood-emojis/edit.png')}></Image>
+                    <Text style = {styles.editText}>Edit</Text>
+                    </View>
+            </View>
+            <View style = {styles.subBubble}>
+                <Text style = {styles.subBubbleText}>{mood[0]}</Text>
+            </View>
+            <View style = {styles.subBubble}>
+                <Text style = {styles.subBubbleText}>{mood[1]}</Text>
+            </View>
+
+            <View style = {styles.subHeader}>
+                <Text style = {[styles.subHeaderText, {marginTop: 1}]}>Your activities</Text>
+                    <View style = {{flexDirection: 'row'}}>
+                    <Image style = {{width: 15, height: 14.23}} source={require('../../assets/mood-emojis/edit.png')}></Image>
+                    <Text style = {styles.editText}>Edit</Text>
+                    </View>
+            </View>
+            <View style = {styles.subBubble}>
+                <Text style = {styles.subBubbleText}>{activities[0]}</Text>
+            </View>
+            <View style = {styles.subBubble}>
+                <Text style = {styles.subBubbleText}>{activities[1]}</Text>
+            </View>
+
+            <View style = {styles.subHeader}>
+                <Text style = {[styles.subHeaderText, {marginTop: 1}]}>Your medications</Text>
+                    <View style = {{flexDirection: 'row'}}>
+                    <Image style = {{width: 15, height: 14.23}} source={require('../../assets/mood-emojis/edit.png')}></Image>
+                    <Text style = {styles.editText}>Edit</Text>
+                    </View>
+            </View>
+            <View style = {styles.subBubble}>
+                <Text style = {styles.subBubbleText}>{medication}</Text>
+            </View>
+        </ScrollView>
     );
 };
 
@@ -43,6 +88,11 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'column',
         alignContent: 'center',
+    },
+    banner: {
+        backgroundColor: '#2BB673',
+        width: 428,
+        height: 79,
     },
     header: {
         backgroundColor: '#2BB673',
@@ -62,12 +112,56 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       paddingTop: 32,
     },
+    subHeader: {
+        flexDirection: 'row',
+        marginTop: 38,
+        justifyContent: 'space-between',
+        marginLeft: 28,
+        marginRight: 30
+    },
     subHeaderText: {
         color: '#2b2b2b',
         fontFamily: 'Lato',
         fontWeight: 800,
         fontSize: 20,
-        marginLeft: 28
+    },
+    bubble: {
+        height: 119,
+        marginTop: 21,
+        marginHorizontal: 28,
+        backgroundColor: '#eef5ed',
+        justifyContent: 'center',
+        borderRadius: 20
+    },
+    bubbleText: {
+        color: '#2b2b2b',
+        fontFamily: 'Open Sans',
+        fontSize: 18,
+        fontWeight: 600,
+        marginLeft: 25,
+        marginRight: 29,
+    },
+    editText: {
+        // fontFamily: 'Raleway',
+        fontWeight: 600,
+        fontSize: 16,
+        color: '#31b877',
+        marginLeft: 8
+    },
+    subBubble: {
+        marginHorizontal: 28,
+        height: 60,
+        backgroundColor: '#eef5ed',
+        marginTop: 23,
+        borderRadius: 20,
+        justifyContent: 'center'
+    },
+    subBubbleText: {
+        marginLeft: 14,
+        fontFamily: 'Open Sans',
+        fontWeight: 600,
+        fontSize: 18,
+        color: '#2b2b2b'
     }
   });
 

@@ -52,16 +52,23 @@ const Journal_2 = ({navigation}) =>{
         />
         
         <View style = {styles.container}>
+
             <Text style = {styles.baseText}>How is your mood today?</Text>
+
             <View style = {styles.radiobutton}>
                 <RadioButton data={data}/>
             </View>
+
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_3')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>
+
         </View>
+
+        <View style = {styles.empty}></View>
+
         </ScrollView>
     );
 };
@@ -101,9 +108,7 @@ const styles = StyleSheet.create({
         marginBottom:10
     },
     button:{
-        flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36
+        marginTop: 38
     },
     progress: {
         position: 'absolute',
@@ -111,6 +116,9 @@ const styles = StyleSheet.create({
         left: 28,
         marginTop: 23,
     },
+    empty: {
+        height: 152,
+    }
   });
 
 export default Journal_2

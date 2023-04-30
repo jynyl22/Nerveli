@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import HomePage from './screens/home-page/HomePage';
+import HomeTabs from './components/nav/HomeTabs';
 import WelcomePage_1 from './screens/welcome-page/welcome_1';
 import WelcomePage_2 from './screens/welcome-page/welcome_2';
 import WelcomePage_3 from './screens/welcome-page/welcome_3';
@@ -48,7 +49,7 @@ import Journal_9 from './screens/journal/Journal_9';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="Journal_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="Home" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
@@ -60,7 +61,7 @@ const App = () => {
     <Stack.Screen name = "WelcomePage_3" component={WelcomePage_3}/>
     <Stack.Screen name = "WelcomePage_4" component={WelcomePage_4}/>
     <Stack.Screen name = "WelcomePage_5" component={WelcomePage_5}/>
-    <Stack.Screen name = "HomePage" component={HomePage}/>
+    <Stack.Screen name = "Home" component={HomeTabs} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
     <Stack.Screen name = "Overview" component={Overview}/>
     <Stack.Screen name = "NPA1_1" component={NPA1_1}/>
     <Stack.Screen name = "NPA1_2" component={NPA1_2}/>
@@ -97,7 +98,7 @@ const App = () => {
     <Stack.Screen name = "Journal_6" component={Journal_6}/>
     <Stack.Screen name = "Journal_7" component={Journal_7}/>
     <Stack.Screen name = "Journal_8" component={Journal_8}/>
-    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}, }}/>
+    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}}}/>
 
   </Stack.Navigator>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, TextInput } from 'react-native';
+import { View,Text,StyleSheet,Pressable, TextInput, ScrollView } from 'react-native';
 import * as Progress from 'react-native-progress';
 
 
@@ -20,6 +20,7 @@ const Journal_8 = ({navigation}) =>{
 
             <Text style = {styles.baseText}>Any additional notes?</Text>
 
+            <ScrollView>
             <TextInput
                 style={styles.input}
                 onChangeText={onChangeText}
@@ -27,6 +28,7 @@ const Journal_8 = ({navigation}) =>{
                 placeholder='Start writing...'
                 multiline={true}
             />
+            </ScrollView>
 
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_9')}>

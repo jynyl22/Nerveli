@@ -23,6 +23,7 @@ switch(month) {
 const Journal_1 = ({navigation}) =>{
     return(
         <View style = {styles.container}>
+            
             <StatusBar
                 barStyle='light-content'
             />
