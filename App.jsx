@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import HomePage from './screens/home-page/HomePage';
 import HomeTabs from './components/nav/HomeTabs';
 import WelcomePage_1 from './screens/welcome-page/welcome_1';
 import WelcomePage_2 from './screens/welcome-page/welcome_2';
@@ -39,6 +38,7 @@ import NPA2_14 from './screens/NPA-test/NPA2_14';
 import NPA2_15 from './screens/NPA-test/NPA2_15';
 import NPA2_16 from './screens/NPA-test/NPA2_16';
 import NPA2_17 from './screens/NPA-test/NPA2_17';
+import HomeTabs from './components/nav/HomeTabs';
 import Journal_1 from './screens/journal/Journal_1';
 import Journal_2 from './screens/journal/Journal_2';
 import Journal_3 from './screens/journal/Journal_3';
@@ -106,7 +106,7 @@ const App = () => {
     <Stack.Screen name = "Journal_8" component={Journal_8}/>
     <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}}}/>
 
-  </Stack.Navigator>
+      </Stack.Navigator>
   );
 };
 
