@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { View,Text, Pressable,StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
-
+import DraggableBox from '../../components/graph/graph.js';
 
 const NPA1_4 = ({navigation}) =>{
     const [count, setValue] = useState(count ?? 1);
@@ -9,7 +8,7 @@ const NPA1_4 = ({navigation}) =>{
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Part 1.4</Text>
             <Text style = {styles.baseText}>In the past 7 days, on a scale of 1-5, how much did pain interfere with your household chores?</Text>
-            {/* <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/> */}
+                <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/>
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_5')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
@@ -34,10 +33,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
-    radiobutton:{
-        marginTop: 200,
-        alignContent: 'center',
-    },
     container:{
         flex:1,
         flexDirection: 'column',
@@ -57,9 +52,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     button:{
-        flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36
+        paddingTop:200
     }
   });
 export default NPA1_4

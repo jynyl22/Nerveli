@@ -1,9 +1,30 @@
-import React from 'react';
-import { View,Text,StyleSheet,Pressable, ScrollView } from 'react-native';
+import React,{useState} from 'react';
+import { View,Text,StyleSheet,Pressable, ScrollView,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
 import * as Progress from 'react-native-progress';
 
 const Journal_5 = ({navigation}) =>{
+    const [selected, setSelected] = useState(false);
+    function userSelection() {
+        if (!selected) {
+            setSelected(true);
+        }
+    }
+
+    function warnUser() {
+        Alert.alert(
+            "Error",
+            "Please select an option.",
+            [
+                {
+                    text: "OK",
+                    style: "cancel"
+                },
+            ],
+            {cancelable: true}
+        )
+    }
+
     const data = [
         {value: "Yes, I did",
         emoji: "👍"
@@ -28,10 +49,10 @@ const Journal_5 = ({navigation}) =>{
         <View style = {styles.container}>
             <Text style = {styles.baseText}>Did you take any medication today?</Text>
             <View style = {styles.radiobutton}>
-                <RadioButton data={data}/>
+                <RadioButton data={data} selectAction={userSelection}/>
             </View>
             <View style = {styles.button}>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_6')}>
+            <Pressable style = {styles.continuebutton} onPress={() => (selected?navigation.navigate('Journal_6') : warnUser())}>
                 <Text style = {styles.buttonfont}>Continue</Text>
             </Pressable>
             </View>

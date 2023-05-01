@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { View, StyleSheet, PanResponder } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-const DraggableBox = ({ boxSize }) => {
+export default function DraggableBox({ boxSize }){
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -46,9 +46,8 @@ const DraggableBox = ({ boxSize }) => {
   });
 
   return (
-    <View>
-        <View style={styles.box} />
-
+    <View style = {{height:boxSize.height}}>
+        <View style={styles.box}/>
         <View style={{top:(boxSize.width/6)-boxSize.height, left:boxSize.width/6}}>
             <Svg height="100%" width="100%" >
                 <Path d={path} stroke="black" strokeWidth="3" fill="transparent" />
@@ -61,5 +60,3 @@ const DraggableBox = ({ boxSize }) => {
     </View>
   );
 };
-
-export default DraggableBox;

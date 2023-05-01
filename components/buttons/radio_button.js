@@ -15,7 +15,7 @@ export default function RadioButton({data, selectAction}) {
                     onPress={() => {setUserOption(item.value); selectAction();}}>
                         <Text style = {styles.emoji}>{item.emoji}</Text>
                         <View style = {styles.background}>
-                        <Text style = {item.value === userOption ? styles.textselected: styles.textunselected}> {item.value}</Text>
+                        <Text style = {item.value === userOption ? styles.textselected: styles.textunselected}>{item.value}</Text>
                         <View style = {item.value === userOption ? styles.selectedring: styles.unselectedring}>
                             <View style = {item.value === userOption ? styles.selected : null}/>
                         </View>

@@ -22,7 +22,7 @@ switch(month) {
 
 const Journal_1 = ({navigation}) =>{
     return(
-        <ScrollView style = {styles.container}>
+        <ScrollView overScrollMode="never" style = {styles.container}>
             
             <StatusBar
                 barStyle='light-content'
@@ -39,29 +39,29 @@ const Journal_1 = ({navigation}) =>{
                 <Text style = {styles.baseText}>This month's entries</Text>
                 <Text style = {styles.seeMore}>See all</Text>
             </View>
-            <View style = {{flexDirection: 'row', justifyContent: 'space-around', marginHorizontal: 28}}>
+            <View style = {{flexDirection: 'row', justifyContent:'space-evenly'}}>
                 <View style = {styles.entryCard}>
                     <Text style = {styles.cardText}>SAT</Text>
-                    <Text style = {{fontSize: 35}}>😴</Text>
+                    <Text style = {{fontSize: 35,color:"black"}}>😴</Text>
                     <Text style = {styles.cardText}>11</Text>
                 </View>
                 <View style = {styles.entryCard}>
                     <Text style = {styles.cardText}>SUN</Text>
-                    <Text style = {{fontSize: 35}}>😓</Text>
+                    <Text style = {{fontSize: 35,color:"black"}}>😓</Text>
                     <Text style = {styles.cardText}>10</Text>
                 </View>
                 <View style = {styles.entryCard}>
                     <Text style = {styles.cardText}>MON</Text>
-                    <Text style = {{fontSize: 35}}>☺️</Text>
+                    <Text style = {{fontSize: 35,color:"black"}}>🤗</Text>
                     <Text style = {styles.cardText}>09</Text>
                 </View>
                 <View style = {styles.entryCard}>
                     <Text style = {styles.cardText}>TUES</Text>
-                    <Text style = {{fontSize: 35}}>🥳</Text>
+                    <Text style = {{fontSize: 35,color:"black"}}>🥳</Text>
                     <Text style = {styles.cardText}>08</Text>
                 </View>
             </View>
-            <View style = {{marginTop: 33, marginHorizontal: 28}}>
+            <View style = {{marginTop: 33, marginHorizontal: 28, marginBottom:40}}>
                 <Text style = {styles.baseText}>This month's statistics</Text>
                 <View style = {styles.statsCard}>
                     <View style = {{flexDirection: 'row'}}>
@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     continuebutton:{
         alignItems: 'center',
         justifyContent: 'center',
-        width: 372,
+        width: "90%",
         height: 49,
-        marginHorizontal:28,
+        marginHorizontal:20,
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
@@ -101,10 +101,11 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'column',
         alignContent: 'center',
+        
     },
     header: {
         backgroundColor: '#2BB673',
-        width: 428,
+        width: "100%",
         height: 97
     },
     headerText: {
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     statsCard: {
         marginTop: 33,
         backgroundColor: '#eef5ed',
-        width: 372,
+        width: "95%",
         height: 307,
         shadowOpacity: 0.1,
         shadowOffset: {width: 0, height: 4},
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
     statsBar2: {
         position: 'absolute',
         backgroundColor: '#2bb673',
-        width: 154,
+        width: "40%",
         height: 28,
         borderRadius: 10,
         marginTop: 55,
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
     statsBar1: {
         position: 'absolute',
         backgroundColor: '#c9ead4',
-        width: 311.11,
+        width: "80%",
         height: 28,
         borderRadius: 10,
         marginTop: 55,
@@ -196,6 +197,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 10,
+        //marginRight:20,
     },
   });
 
