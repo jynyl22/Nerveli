@@ -8,7 +8,7 @@ const WelcomePage_2 = ({navigation}) =>{
     const [currentPageIdx] = useState(1);
 
     return(
-        <ScrollView>
+        <ScrollView overScrollMode="never">
             <View style={styles.container}>
                 <Image style={styles.figure} source={require('../../assets/welcome-page/welcome-2.png')}/>
                 <WelcomeCard

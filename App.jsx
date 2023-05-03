@@ -56,7 +56,7 @@ import Journal_9 from './screens/journal/Journal_9';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="Journal_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="Journal_9" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
@@ -113,7 +113,7 @@ const App = () => {
     <Stack.Screen name = "Journal_6" component={Journal_6}/>
     <Stack.Screen name = "Journal_7" component={Journal_7}/>
     <Stack.Screen name = "Journal_8" component={Journal_8}/>
-    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerTitleStyle: {color: '#ffffff', fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center'}, headerStyle: {backgroundColor: '#2BB673'}}}/>
+    <Stack.Screen name = "Journal_9" component={Journal_9} options={{headerShown: false}}/>
 
       </Stack.Navigator>
   );

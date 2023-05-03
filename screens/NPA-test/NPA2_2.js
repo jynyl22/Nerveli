@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#2B2B2B',
         paddingVertical: 20,
+        paddingHorizontal: 25,
         textAlign: 'center',
     },
     title:{
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         textAlign: 'center',
         color: '#2B2B2B',
+        paddingHorizontal: 100
     },
     container:{
         justifyContent: 'center',

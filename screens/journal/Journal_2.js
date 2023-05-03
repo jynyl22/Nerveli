@@ -57,7 +57,7 @@ const Journal_2 = ({navigation}) =>{
     ];
 
     return(
-        <ScrollView>
+        <ScrollView overScrollMode="never">
 
         <StatusBar 
             barStyle='dark-content'

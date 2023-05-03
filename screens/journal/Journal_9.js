@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, StatusBar, Image, ScrollView } from 'react-native';
+import { View,Text, StyleSheet, StatusBar, Image, ScrollView, TouchableOpacity } from 'react-native';
 
 var month = new Date().getMonth() + 1;
 var day = new Date().getDate();
@@ -28,6 +28,7 @@ const activities = ['🏠  Household chores', '🥾  Hiking']
 const medication = '🙅  Not today'
 
 const Journal_9 = ({navigation}) =>{
+
     return(
         <ScrollView style = {styles.container} overScrollMode='never'>
 
@@ -35,6 +36,10 @@ const Journal_9 = ({navigation}) =>{
                 barStyle='light-content'
             />
             <View style = {styles.header}>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <Image style = {{marginTop:20,marginLeft:25,}}source={require('../../assets/journal/back.png')}></Image >
+                </TouchableOpacity>
+                <Text style = {{marginTop:20, color:"white", fontFamily: 'Lato', fontWeight: '700', fontSize: 20, alignSelf: 'center', position:'absolute'}}>NERVELI</Text>
                 <Text style = {styles.headerText}>{monthName} {day}, {year}</Text>
             </View>
             <Text style = {[styles.subHeaderText, {marginTop: 33, marginLeft: 28}]}>Your pain scale</Text>
@@ -96,8 +101,7 @@ const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: '#2BB673',
-        width: 428,
-        height: 105,
+        width:'100%',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         shadowOpacity: 0.25,
@@ -111,6 +115,7 @@ const styles = StyleSheet.create({
       fontSize: 24,
       textAlign: 'center',
       paddingTop: 32,
+      paddingBottom: 45
     },
     subHeader: {
         flexDirection: 'row',

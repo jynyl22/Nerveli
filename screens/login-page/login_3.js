@@ -10,7 +10,7 @@ const Login_3 = ({navigation}) =>{
 
 
     return(
-        <ScrollView style = {styles.container}>
+        <ScrollView overScrollMode="never" style = {styles.container}>
 
             <Text style = {styles.headerText}>Sign up</Text>
 

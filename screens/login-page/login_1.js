@@ -3,7 +3,7 @@ import { Image, View, StyleSheet, Text, Pressable, ScrollView } from 'react-nati
 
 const Login_1 = ({navigation}) =>{
     return(
-        <ScrollView style = {styles.container}>
+        <ScrollView overScrollMode="never" style = {styles.container}>
             <Image style = {styles.mascot} source={require('../../assets/brand-mascot/elephantSign.png')}></Image>
 
             <Text style = {styles.text1}>Take control of your nerve pain. Live empowered.</Text>

@@ -56,7 +56,7 @@ const Journal_6 = ({navigation}) =>{
     ];
 
     return(
-        <ScrollView>
+        <ScrollView overScrollMode="never">
 
         <Progress.Bar
             style={styles.progress}
