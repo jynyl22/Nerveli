@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { View,Text, Pressable,StyleSheet,Alert,ScrollView } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
-
+import * as Progress from 'react-native-progress';
 
 const NPA2_17 = ({navigation}) =>{
     const [selected, setSelected] = useState(false);
@@ -26,18 +26,26 @@ const NPA2_17 = ({navigation}) =>{
     }
 
     const data = [
-        {value: "I felt pressure, but it was not painful",
+        {value: "I did not experience a cold sensation",
         emoji: "🙂"
         },
-        {value: "I felt pressure, and it was painful",
+        {value: "I experienced a heat sensation, but it was not painful",
         emoji:"🔥"
         },
-        {value: "None of the above",
+        {value: "I experienced a heat sensation, and it was painful",
         emoji: "😣"
         }
     ];
     return(
         <ScrollView style = {styles.container}>
+            <Progress.Bar
+            style={styles.progress}
+            color='#31B877'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={333/372}
+            width={372}
+            />
             <Text style = {styles.baseText}>Part 2.4</Text>
             <Text style = {styles.baseText}>From what you felt in the Light Touch Stimulus Test, which one of these options did you feel?</Text>
             <View style = {styles.radiobutton}>
@@ -53,6 +61,12 @@ const NPA2_17 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    progress: {
+        marginTop: 23,
+        alignSelf:'center',
+        height:5,
+        marginBottom: 10
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',

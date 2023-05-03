@@ -98,13 +98,13 @@ const styles = StyleSheet.create({
     button:{
         flex: 1,
         // justifyContent: 'flex-end',
-        marginTop: 413
+        marginTop: 300,
+        marginBottom:30
     },
     progress: {
-        position: 'absolute',
-        height: 5,
-        left: 28,
         marginTop: 23,
+        alignSelf:'center',
+        height:5
     },
   });
 

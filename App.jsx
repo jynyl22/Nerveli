@@ -59,7 +59,7 @@ const App = () => {
   <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
-  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 18, textAlign: 'center', color: 'black'},
+  headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
   contentStyle: { backgroundColor: '#FFFFF' },
   animation: 'slide_from_right',
   }}>

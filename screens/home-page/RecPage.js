@@ -5,7 +5,7 @@ import {WeatherPanel, RecPanels} from '../../components/buttons/rec_panel';
 export default RecPage = ({navigation}) =>{
     return (
         <SafeAreaView style={{flex:1}}>
-            <ScrollView style = {styles.container}>
+            <ScrollView overScrollMode="never" style = {styles.container}>
                 <Text style = {styles.sectionText}>Today's recommendations</Text>
                 <View>
                     <WeatherPanel data={weatherData}/>

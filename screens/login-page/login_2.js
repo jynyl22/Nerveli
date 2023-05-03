@@ -89,10 +89,9 @@ const styles = StyleSheet.create({
         paddingLeft: 24.13
     },
     loginBtn: {
-        width: 209,
+        width: "60%",
         height: 49,
         backgroundColor: '#2bb673',
-        marginHorizontal: 109,
         marginTop: 48,
         borderRadius: 20,
         justifyContent: 'center',
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 4,
+        alignSelf:'center'
     },
     btnText: {
         fontFamily: 'Lato',
@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
     },
     bottom: {
         flexDirection: 'row',
-        marginLeft: 77,
         marginTop: 176,
+        alignSelf:'center'
     },
     bottomText: {
         fontFamily: 'Lato',

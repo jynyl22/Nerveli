@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
 import { View,Text, Pressable,StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
-
+import * as Progress from 'react-native-progress';
 
 const NPA1_10 = ({navigation}) =>{
     const [count, setValue] = useState(count ?? 1);
     return(
         <View style = {styles.container}>
+            <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={352/372}
+            width={372}
+            />
             <Text style = {styles.baseText}>Part 1.11</Text>
             <Text style = {styles.baseText}>Okay, last question! How often are you in pain? On a scale of 1-5 with 1 being not often and 5 being very often.</Text>
             <View style = {styles.slider}>
@@ -30,6 +38,12 @@ const NPA1_10 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    progress: {
+        marginTop: 23,
+        alignSelf:'center',
+        height:5,
+        marginBottom: 10
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',

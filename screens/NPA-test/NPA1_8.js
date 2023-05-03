@@ -1,10 +1,18 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, ImageBackground} from 'react-native';
 import BodyButtons from '../../components/buttons/body_button';
-
+import * as Progress from 'react-native-progress';
 const NPA1_8 = ({navigation}) =>{
     return(
         <View style = {styles.container}>
+            <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={216/372}
+            width={372}
+            />
             <Text style = {styles.baseText}>Part 1.8</Text>
             <Text style = {styles.baseText}>Using this body map, please show us where you have pain.</Text>
             <View style = {styles.imgView}>
@@ -104,6 +112,12 @@ const bodyPoints = [
 ];
 
 const styles = StyleSheet.create({
+    progress: {
+        marginTop: 23,
+        alignSelf:'center',
+        height:5,
+        marginBottom: 10
+    },
     unselected:{
         backgroundColor: 'green',
         opacity: 0.5

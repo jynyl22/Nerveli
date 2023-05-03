@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { View,Text, Pressable,StyleSheet,Alert } from 'react-native';
 import RadioButton from '../../components/buttons/radio_button';
-
+import * as Progress from 'react-native-progress';
 
 const NPA1_7 = ({navigation}) =>{
     const [selected, setSelected] = useState(false);
@@ -41,6 +41,14 @@ const NPA1_7 = ({navigation}) =>{
     ];
     return(
         <View style = {styles.container}>
+            <Progress.Bar
+            style={styles.progress}
+            color='#ffd146'
+            borderColor='#f6f6f6'
+            unfilledColor='#f6f6f6'
+            progress={198/372}
+            width={372}
+            />
             <Text style = {styles.baseText}>Part 1.7</Text>
             <Text style = {styles.baseText}>How do you classify your gender?</Text>
             <View style = {styles.radiobutton}>
@@ -56,6 +64,12 @@ const NPA1_7 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    progress: {
+        marginTop: 23,
+        alignSelf:'center',
+        height:5,
+        marginBottom: 10
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',

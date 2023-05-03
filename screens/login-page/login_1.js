@@ -67,13 +67,14 @@ const styles = StyleSheet.create({
     },
     apple: {
         backgroundColor: '#000',
-        width: 372,
+        width: "95%",
         height: 49,
-        marginHorizontal: 28,
+        //marginHorizontal: 28,
         borderRadius: 20,
         marginTop: 51,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignSelf:'center'
     },
     appleLogo: {
         width: 18.94,

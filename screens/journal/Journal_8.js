@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'flex-end',
         marginTop: 62,
+        marginBottom:30,
     },
     input:{
         backgroundColor: '#eef5ed',
@@ -88,15 +89,16 @@ const styles = StyleSheet.create({
         width: 373,
         height: 477,
         borderRadius: 20,
-        textAlign: 'left',
+        //textAlign: 'left',
         paddingHorizontal: 25,
-        paddingTop: 16
+        //paddingTop: 16,
+        alignSelf:'center',
+        textAlignVertical:'top'
     },
     progress: {
-        position: 'absolute',
-        height: 5,
-        left: 28,
         marginTop: 23,
+        alignSelf:'center',
+        height:5
     }
   });
 

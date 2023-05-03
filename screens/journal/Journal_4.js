@@ -81,10 +81,9 @@ const styles = StyleSheet.create({
         marginBottom: 36
     },
     progress: {
-        position: 'absolute',
-        height: 5,
-        left: 28,
         marginTop: 23,
+        alignSelf:'center',
+        height:5
     },
   });
   

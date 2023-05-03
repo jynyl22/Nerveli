@@ -4,7 +4,7 @@ import { Image, View, Text, Pressable, StyleSheet, TouchableOpacity, ScrollView}
 const HomePage = ({navigation}) =>{
 
     return(
-        <ScrollView>
+        <ScrollView overScrollMode="never">
             <View style = {styles.container}>
                 <View style = {styles.header}>
                     <Text style = {styles.header_title}>NERVELI</Text>
