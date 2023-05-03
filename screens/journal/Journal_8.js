@@ -7,7 +7,7 @@ const Journal_8 = ({navigation}) =>{
     const [text, onChangeText] = React.useState('');
 
     return(
-        <ScrollView style = {styles.container}>
+        <ScrollView overScrollMode="never" style = {styles.container}>
 
         <Progress.Bar
             style={styles.progress}

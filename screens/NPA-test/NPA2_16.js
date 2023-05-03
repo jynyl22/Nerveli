@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#2B2B2B',
         paddingVertical: 20,
+        paddingHorizontal: 65,
         textAlign: 'center',
     },
     title:{
