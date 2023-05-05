@@ -56,7 +56,7 @@ import Journal_9 from './screens/journal/Journal_9';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return(
-  <Stack.Navigator initialRouteName="Journal_1" screenOptions={{title:"NERVELI",
+  <Stack.Navigator initialRouteName="WelcomePage_1" screenOptions={{title:"NERVELI",
   headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {fontFamily: "Lato-Bold",fontSize: 20, textAlign: 'center', color: 'black'},
