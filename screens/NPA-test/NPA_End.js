@@ -1,11 +1,11 @@
 import React from 'react';
-import { View,Text, Pressable,StyleSheet,Image, ScrollView } from 'react-native';
+import { View,Text, Pressable,StyleSheet,Image, ScrollView, Platform } from 'react-native';
 import Star_Rating from '../../components/star rating/star_rating';
 const NPA_End = ({navigation}) =>{
     return(
         <ScrollView>
         <View style={styles.container}>
-            <Text style={{fontFamily:'Open Sans',fontWeight:'bold',color:'#2BB673',fontSize: 25,textAlign:'center',marginTop:20,}}>Hooray!</Text>
+            <Text style={styles.hooray}>Hooray!</Text>
             <Image style={styles.confetti} source={require('../../assets/confetti/Confetti.png')}/>
             <Image style={styles.pic} source={require('../../assets/brand-mascot/elephantBase.png')}/>
             <Text style={{fontFamily:'Open Sans',fontWeight:'bold',color:'#2BB673',fontSize: 25,textAlign:'center',}}>You have successfully completed our NPA survey!</Text>
@@ -20,6 +20,28 @@ const NPA_End = ({navigation}) =>{
     )
 }
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            hooray: {
+                fontFamily:'Open Sans',
+                fontWeight:'bold',
+                color:'#2BB673',
+                fontSize: 25,
+                textAlign:'center',
+                marginTop:20,
+            }
+        },
+        ios: {
+            hooray: {
+                fontFamily:'Open Sans',
+                fontWeight:'bold',
+                color:'#2BB673',
+                fontSize: 25,
+                textAlign:'center',
+                marginTop:62,
+            }
+        }
+    }),
     container:{
         marginHorizontal:30,
         justifyContent:'center',

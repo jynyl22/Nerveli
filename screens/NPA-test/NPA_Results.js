@@ -1,11 +1,11 @@
 import React from 'react';
-import { View,Text,StyleSheet,Image, ScrollView,TouchableOpacity,Pressable } from 'react-native';
+import { View,Text,StyleSheet,Image, ScrollView,TouchableOpacity,Pressable, Platform } from 'react-native';
 const NPA_Results = ({navigation}) =>{
     return(
         <ScrollView overScrollMode="never">
             <View style = {{backgroundColor:'#EEF5ED',height:350,borderBottomLeftRadius:20,borderBottomRightRadius:20}}>
                     <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                    <Image style = {{marginTop:20,marginLeft:10,}}source={require('../../assets/NPA-Results-pics/back_arrow.png')}></Image >
+                    <Image style = {styles.backButton}source={require('../../assets/NPA-Results-pics/back_arrow.png')}></Image >
                     </TouchableOpacity>
                 <View style={styles.container}>
                     <Text style ={{textAlign:'center',fontFamily:'Raleway',fontWeight:'bold',fontSize:25,marginHorizontal:70}}>Hi, Jane! Here are your NPA results:</Text>
@@ -46,6 +46,20 @@ const NPA_Results = ({navigation}) =>{
     )
 }
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            backButton: {
+                marginTop:20,
+                marginLeft:10,
+            }
+        },
+        ios: {
+            backButton: {
+                marginTop:50,
+                marginLeft:25,
+            }
+        }
+    }),
     container:{
         justifyContent:'center',
         flexDirection:'column',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native';
+import { Image, View, Text, Pressable, StyleSheet,ScrollView, Platform} from 'react-native';
 
 
 const NPA2_12 = ({navigation}) =>{
@@ -30,6 +30,23 @@ const NPA2_12 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            card:{
+                width:'100%',
+                marginTop:40,
+                backgroundColor: '#EEF5ED',
+            },
+        },
+        ios: {
+            card:{
+                width:'100%',
+                marginTop:40,
+                backgroundColor: '#EEF5ED',
+                height: 700
+            },
+        }
+    }),
     emoji:{
         fontWeight:'bold',
         color:'black',
@@ -92,11 +109,6 @@ const styles = StyleSheet.create({
         height: 49,
         borderRadius: 20,
         backgroundColor: '#2BB673',
-    },
-    card:{
-        width:'100%',
-        marginTop:40,
-        backgroundColor: '#EEF5ED',
     },
     icon:{
         marginTop:50,

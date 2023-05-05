@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native';
+import { Image, View, Text, Pressable, StyleSheet,ScrollView, Platform} from 'react-native';
 
 
 const NPA2_1 = ({navigation}) =>{
@@ -23,6 +23,24 @@ const NPA2_1 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            card:{
+                width:'100%',
+                height:580,
+                marginTop:40,
+                backgroundColor: '#EEF5ED',
+            },
+        },
+        ios: {
+            card:{
+                width:'100%',
+                height:645,
+                marginTop:40,
+                backgroundColor: '#EEF5ED',
+            },
+        }
+    }),
     card_text:{
         fontFamily: 'Open Sans',
         fontWeight: 400,
@@ -57,12 +75,6 @@ const styles = StyleSheet.create({
         height: 49,
         borderRadius: 20,
         backgroundColor: '#2BB673',
-    },
-    card:{
-        width:'100%',
-        height:580,
-        marginTop:40,
-        backgroundColor: '#EEF5ED',
     },
     icon:{
         marginTop:50,

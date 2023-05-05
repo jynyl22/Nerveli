@@ -27,17 +27,29 @@ const WelcomePage_5 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            figure: {
+                height: 200,
+                resizeMode: 'contain',
+                alignSelf: 'center'
+            }
+        },
+        ios: {
+            figure: {
+                height: 200,
+                resizeMode: 'contain',
+                alignSelf: 'center',
+                marginTop: 77
+            }
+        }
+    }),
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',
         paddingTop: 30,
         justifyContent: 'center'
     },
-    figure: {
-        height: 200,
-        resizeMode: 'contain',
-        alignSelf: 'center'
-    }
 });
 
 export default WelcomePage_5

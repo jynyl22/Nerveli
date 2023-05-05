@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, StyleSheet, Text, Pressable, ScrollView } from 'react-native';
+import { Image, View, StyleSheet, Text, Pressable, ScrollView, Platform } from 'react-native';
 
 const Login_1 = ({navigation}) =>{
     return(
@@ -37,6 +37,34 @@ const Login_1 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            apple: {
+                backgroundColor: '#000',
+                width: "95%",
+                height: 49,
+                //marginHorizontal: 28,
+                borderRadius: 20,
+                marginTop: 51,
+                alignItems: 'center',
+                justifyContent: 'center',
+                alignSelf:'center'
+            },
+        },
+        ios: {
+            apple: {
+                backgroundColor: '#000',
+                width: 372,
+                height: 49,
+                marginHorizontal: 28,
+                borderRadius: 20,
+                marginTop: 51,
+                alignItems: 'center',
+                justifyContent: 'center',
+                alignSelf:'center'
+            },
+        }
+    }),
     container: {
         
     },
@@ -48,7 +76,7 @@ const styles = StyleSheet.create({
         marginTop: 7
     },
     text1: {
-        // fontFamily: 'Raleway',
+        fontFamily: 'Raleway',
         color: '#22541a',
         fontWeight: 700,
         fontSize: 20,
@@ -57,6 +85,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     text2: {
+        fontFamily: 'Raleway',
         color: '#569f4a',
         fontWeight: 500,
         fontSize: 15,
@@ -64,17 +93,6 @@ const styles = StyleSheet.create({
         marginTop: 25,
         marginLeft: 56,
         marginRight: 54,
-    },
-    apple: {
-        backgroundColor: '#000',
-        width: "95%",
-        height: 49,
-        //marginHorizontal: 28,
-        borderRadius: 20,
-        marginTop: 51,
-        alignItems: 'center',
-        justifyContent: 'center',
-        alignSelf:'center'
     },
     appleLogo: {
         width: 18.94,
@@ -104,7 +122,7 @@ const styles = StyleSheet.create({
         marginTop: 60,
     },
     bottomText: {
-        fontFamily: 'Lato',
+        fontFamily: 'Raleway',
         fontWeight: 700,
         fontSize: 15,
     }

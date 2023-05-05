@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         borderRadius: 40
     },
     headerText: {
-        fontFamily: 'Lato',
+        fontFamily: 'Raleway',
         fontWeight: 700,
         fontSize: 25,
         color: '#2b2b2b',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 4,
-        fontFamily: 'Lato',
+        fontFamily: 'Raleway',
         fontSize: 18,
         paddingLeft: 26
     },
@@ -113,8 +113,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 4,
-        fontFamily: 'Lato',
-        // fontWeight: 600,
+        fontFamily: 'Raleway',
         fontSize: 18,
         paddingLeft: 24.13
     },
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
         marginTop: 130,
     },
     bottomText: {
-        fontFamily: 'Lato',
+        fontFamily: 'Raleway',
         fontWeight: 700,
         fontSize: 15,
     }
