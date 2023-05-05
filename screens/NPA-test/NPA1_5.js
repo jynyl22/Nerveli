@@ -6,6 +6,7 @@ const NPA1_5 = ({navigation}) =>{
     const [count, setValue] = useState(count ?? 1);
     return(
         <View style = {styles.container}>
+            
             <Progress.Bar
             style={styles.progress}
             color='#ffd146'
@@ -15,7 +16,7 @@ const NPA1_5 = ({navigation}) =>{
             width={372}
             />
             <Text style = {styles.baseText}>Part 1.5</Text>
-            <Text style = {styles.baseText}>In the past 7 days, on a scale of 1-5, how much did pain interfere with your ability to participate in social activities?</Text>
+            <Text style = {styles.baseText}>In the past 7 days, how much did pain interfere with your ability to participate in social activities?</Text>
             <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/>
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_6')}>

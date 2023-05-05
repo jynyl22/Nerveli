@@ -5,16 +5,16 @@ import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native
 const NPA2_4 = ({navigation}) =>{
     return(
             <View style={styles.container}>
-                <View style = {styles.circle}>
-                <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
+                <View>
+                    <Image style={styles.icon} source={require('../../assets/video-images/Cold.png')}/>
                 </View>
-            <View style={styles.card}>
-            <Text style={styles.title}>Cold Detection Test</Text>
-                <Text style={styles.card_text}>Watch how to perform the cold dectection test or visit the full video.</Text>
-            <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_5')}>
-                <Text style = {styles.buttonfont}>Next</Text>
-            </Pressable>
-            </View>
+                <View style={styles.card}>
+                    <Text style={[styles.title]}>Cold Detection Test</Text>
+                    <Text style={styles.card_text}>Watch how to perform the cold dectection test or visit the full video.</Text>
+                <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_5')}>
+                    <Text style = {styles.buttonfont}>Next</Text>
+                </Pressable>
+                </View>
             </View>
     );
 };
@@ -57,24 +57,16 @@ const styles = StyleSheet.create({
     card:{
         width:'100%',
         height:580,
-        marginTop:40,
+        //marginTop:40,
         backgroundColor: '#EEF5ED',
     },
     icon:{
         marginTop:50,
-        height: 120,
-        width: 120,
+        //height: 267,
+        width: "80%",
         resizeMode: 'contain',
         alignSelf: 'center',
    },  
-    circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 300/2,
-        marginHorizontal: "25%",
-        justifyContent: 'center',
-        alignSelf: 'center',
-    },
 });
 
 export default NPA2_4

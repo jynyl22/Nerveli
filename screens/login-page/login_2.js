@@ -23,6 +23,7 @@ const Login_2 = ({navigation}) =>{
                 onChangeText={onChangePass}
                 value={pass}
                 placeholder='Password'
+                secureTextEntry={true}
             />
 
             <Pressable style = {styles.loginBtn} onPress={() => navigation.navigate('Overview')}>

@@ -11,7 +11,7 @@ const NPA2_12 = ({navigation}) =>{
                 </View>
             <View style={styles.card}>
             <Text style={styles.title}>Time For The Maximum Pressure Threshold</Text>
-                <Text style={styles.card_text}>This test will ask you to conduct a test with materials to check your ablilty to feel the normal amount of pressure.</Text>
+                <Text style={styles.card_text}>This test will ask you to conduct a test with materials to check your ablilty to feel the maximum amount of pressure.</Text>
                 <View style={styles.white_card}>
                     <View style = {{flexDirection:'row',alignItems:'center',}}>
                         <View style = {styles.greencircle}>

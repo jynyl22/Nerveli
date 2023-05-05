@@ -17,7 +17,7 @@ const NPA1_3 = ({navigation}) =>{
             width={372}
             />
             <Text style = {styles.baseText}>Part 1.3</Text>
-            <Text style = {styles.baseText}>In the past 7 days, on a scale of 1-5, how much did pain interfere with work around the home?</Text>
+            <Text style = {styles.baseText}>In the past 7 days, how much did pain interfere with work around the home?</Text>
                 <DraggableBox boxSize={{ width: 300, height: 300, x: 50,y:50 }}/>
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA1_4')}>

@@ -5,8 +5,8 @@ import { Image, View, Text, Pressable, StyleSheet,ScrollView} from 'react-native
 const NPA2_10 = ({navigation}) =>{
     return(
             <View style={styles.container}>
-                <View style = {styles.circle}>
-                <Image style={styles.icon} source={require('../../assets/brand-mascot/elephantBase.png')}/>
+                <View>
+                    <Image style={styles.icon} source={require('../../assets/video-images/Pressure.png')}/>
                 </View>
             <View style={styles.card}>
             <Text style={styles.title}>Normal Pressure Threshold</Text>
@@ -57,24 +57,17 @@ const styles = StyleSheet.create({
     card:{
         width:'100%',
         height:580,
-        marginTop:40,
+        //marginTop:40,
         backgroundColor: '#EEF5ED',
     },
     icon:{
         marginTop:50,
-        height: 120,
-        width: 120,
+        //height: 120,
+        width: "80%",
         resizeMode: 'contain',
         alignSelf: 'center',
    },  
-    circle: {
-        width: 150,
-        height: 150,
-        borderRadius: 300/2,
-        marginHorizontal: "25%",
-        justifyContent: 'center',
-        alignSelf: 'center',
-    },
+    
 });
 
 export default NPA2_10

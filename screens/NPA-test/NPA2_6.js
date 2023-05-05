@@ -11,7 +11,7 @@ const NPA2_6 = ({navigation}) =>{
                 </View>
             <View style={styles.card}>
             <Text style={styles.title}>Time For The Heat Dectection Test</Text>
-                <Text style={styles.card_text}>This test will ask you to conduct a test with materials to check your ablilty to feel the cold temperture.</Text>
+                <Text style={styles.card_text}>This test will ask you to conduct a test with materials to check your ablilty to feel the hot temperture.</Text>
                 <View style={styles.white_card}>
                     <View style = {{flexDirection:'row',alignItems:'center',}}>
                         <View style = {styles.greencircle}>
@@ -23,7 +23,7 @@ const NPA2_6 = ({navigation}) =>{
                         <View style = {styles.greencircle}>
                             <Text style = {styles.emoji}>🔥</Text>
                         </View>
-                        <Text style = {styles.white_card_text}>Hot water</Text>
+                        <Text style = {styles.white_card_text}>Warm water</Text>
                     </View>
                 </View>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('NPA2_7')}>
