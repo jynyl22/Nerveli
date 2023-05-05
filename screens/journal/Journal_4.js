@@ -1,35 +1,31 @@
 import React, {useState} from 'react';
-import { View,Text, Pressable,StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
+import { View,Text, Pressable,StyleSheet, ScrollView, ImageBackground } from 'react-native';
+import DraggableBox from '../../components/graph/graph.js';
 import * as Progress from 'react-native-progress';
-
-const Journal_4 = ({navigation}) =>{
-    const [count, setValue] = useState(count ?? 1);
+const NPA1_2 = ({navigation}) =>{
     return(
         <View style = {styles.container}>
-
-        <Progress.Bar
-            style={styles.progress}
-            color='#ffd146'
-            borderColor='#f6f6f6'
-            unfilledColor='#f6f6f6'
-            progress={187/372}
-            width={372}
-        />
-
+            <Progress.Bar
+                style={styles.progress}
+                color='#ffd146'
+                borderColor='#f6f6f6'
+                unfilledColor='#f6f6f6'
+                progress={187/372}
+                width={372}
+            />
             <Text style = {styles.baseText}>How are you feeling today, Jane?</Text>
-            <Text style = {styles.baseText}>Rate on a scale of 1-5, 1 being no pain and 5 being severe pain.</Text>
-            <View style = {styles.radiobutton}>
-                <Text style = {{textAlign:'center',fontFamily:'Lato',fontSize:20,color:'black'}}>{count}</Text>
-                <Slider style={{margin:30}}
-                step={1}
-                minimumValue={1}
-                maximumValue={5}
-                minimumTrackTintColor="red"
-                maximumTrackTintColor="#000000"
-                value={count}
-                onValueChange={setValue}/>
+            <Text style = {styles.topText}>Severe Pain</Text>
+            <View style = {styles.imgView}>
+                <ImageBackground
+                    style={styles.img}
+                    source={require('../../assets/images/Gradient.jpg')}
+                    >
+                </ImageBackground>
             </View>
+            <DraggableBox boxSize={{ width: 300, height: 300, x: 0,y:30}}/>
+            <Text style = {styles.leftText}>No interference with activities</Text>
+            <Text style = {styles.rightText}>Completely interferes with activities</Text>
+            <Text style = {styles.bottomText}>No Pain</Text>
             <View style = {styles.button}>
             <Pressable style = {styles.continuebutton} onPress={() => navigation.navigate('Journal_5')}>
                 <Text style = {styles.buttonfont}>Continue</Text>
@@ -40,11 +36,24 @@ const Journal_4 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    progress: {
+        marginTop: 23,
+        alignSelf:'center',
+        height:5,
+        marginBottom: 10
+    },
+    unselected:{
+        backgroundColor: 'green',
+        opacity: 0.5
+    },
+    selected: {
+        backgroundColor: '#9d1600',
+        opacity: 0.85
+    },
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
-        fontSize:18,
-        fontWeight: '700'
+        fontSize:18
     },
     continuebutton:{
         alignItems: 'center',
@@ -55,22 +64,80 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#2BB673',
     },
-    radiobutton:{
-        marginTop: 200,
-        alignContent: 'center',
+    imgView:{
+        flex: 7,
+        flexWrap: 'wrap',
+        borderRadius: 10,
+        alignContent : 'center',
+        top:180,
+        position: 'absolute',
+        width: 300,
+        height: 300,
+        resizeMode: 'center'
+    },
+    img:{
+        borderRadius: 10,
+        width: 300,
+        height: 300
     },
     container:{
         flex:1,
         flexDirection: 'column',
-        alignContent: 'center',
-        backgroundColor: 'white'
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: '100%',
+        height: '100%',
     },
     baseText: {
       color:"black",
       fontFamily: 'Open Sans',
       textAlign: 'center',
       fontSize: 20,
-      marginTop: 65,
+      marginRight:20,
+      marginLeft:20,
+      marginBottom:10,
+      marginTop: 40
+    },
+    topText: {
+      color:"black",
+      fontFamily: 'Open Sans',
+      textAlign: 'center',
+      fontSize: 18,
+      top:30,
+      marginRight:20,
+      marginLeft:20,
+      marginBottom:10,
+    },
+    leftText: {
+          color:"black",
+          fontFamily: 'Open Sans',
+          textAlign: 'center',
+          fontSize: 18,
+          transform: [{ rotate: '270deg'}],
+          top:-130,
+          left:-170,
+          marginRight:20,
+          marginLeft:20,
+          marginBottom:10
+        },
+    rightText: {
+          color:"black",
+          fontFamily: 'Open Sans',
+          textAlign: 'center',
+          fontSize: 18,
+          transform: [{ rotate: '90deg'}],
+          top:-170,
+          left:170,
+          marginRight:20,
+          marginLeft:20,
+          marginBottom:10
+        },
+    bottomText: {
+      color:"black",
+      fontFamily: 'Open Sans',
+      textAlign: 'center',
+      fontSize: 18,
+      top:-30,
       marginRight:20,
       marginLeft:20,
       marginBottom:10
@@ -79,12 +146,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 36
-    },
-    progress: {
-        marginTop: 23,
-        alignSelf:'center',
-        height:5
-    },
+    }
   });
-  
-export default Journal_4
+export default NPA1_2

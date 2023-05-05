@@ -30,16 +30,22 @@ export default function DraggableBox({ boxSize }){
       width: boxSize.width/6,
       height: boxSize.width/6,
       transform: [{ translateX }, { translateY }],
+      shadowOpacity: 0.1,
+      shadowOffset: {width: 0, height: 4},
+      shadowRadius: 10,
       position: 'absolute',
       top:boxSize.y,
       left:boxSize.x
 
     },
     box: {
-          backgroundColor: 'grey',
+          backgroundColor: 'clear',
           borderRadius: 10,
           width: boxSize.width,
           height: boxSize.height,
+          shadowOpacity: 0.1,
+          shadowOffset: {width: 0, height: 4},
+          shadowRadius: 10,
           top:boxSize.y,
           left:boxSize.x
         },
@@ -48,7 +54,7 @@ export default function DraggableBox({ boxSize }){
   return (
     <View style = {{height:boxSize.height}}>
         <View style={styles.box}/>
-        <View style={{top:(boxSize.width/6)-boxSize.height, left:boxSize.width/6}}>
+        <View style={{top:-boxSize.height+boxSize.y, left:boxSize.x}}>
             <Svg height="100%" width="100%" >
                 <Path d={path} stroke="black" strokeWidth="3" fill="transparent" />
                 <Path d={path2} stroke="black" strokeWidth="3" fill="transparent" />
