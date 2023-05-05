@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./HomeStack.js";
 import HomePage from '../../screens/home-page/HomePage.js';
-import { Text } from "react-native";
+import { Text, Platform } from "react-native";
 import Svg, {Path} from 'react-native-svg'
 import CustomHomeButton from "../buttons/custom_home_button.js";
 import Journal_1 from "../../screens/journal/Journal_1.js";
@@ -54,19 +54,38 @@ export default HomeTabs = () => {
 }
 
 const barOptions = {
-    tabBarStyle: {
-        height: 80,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-    },
-    tabBarLabelStyle: {
-        fontSize: 11,
-        color: 'black',
-        fontFamily: 'OpenSans-Medium',
-        textAlign: 'center',
-        textTransform: 'uppercase',
-        paddingBottom: 15
-    },
+    ...Platform.select({
+        android: {
+            tabBarStyle: {
+                height: 80,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+            },
+            tabBarLabelStyle: {
+                fontSize: 11,
+                color: 'black',
+                fontFamily: 'OpenSans-Medium',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                paddingBottom: 15
+            },
+        },
+        ios: {
+            tabBarStyle: {
+                height: 80,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+            },
+            tabBarLabelStyle: {
+                fontSize: 11,
+                color: 'black',
+                fontFamily: 'OpenSans-Medium',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                marginBottom: -15
+            },
+        }
+    })
 };
 
 const homeStyle = {

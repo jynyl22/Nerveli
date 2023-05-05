@@ -1,10 +1,13 @@
 import React from 'react';
-import { Image, View, Text, Pressable, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import { Image, View, Text, Pressable, StyleSheet, TouchableOpacity, ScrollView, Platform, StatusBar } from 'react-native';
 
 const HomePage = ({navigation}) =>{
 
     return(
         <ScrollView overScrollMode="never">
+            <StatusBar
+                barStyle='light-content'
+            />
             <View style = {styles.container}>
                 <View style = {styles.header}>
                     <Text style = {styles.header_title}>NERVELI</Text>
@@ -80,16 +83,28 @@ const HomePage = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            header:{
+                backgroundColor: '#2BB673',
+                width: '100%',
+                paddingTop: 25,
+                paddingBottom: 40
+            },
+        },
+        ios: {
+            header:{
+                backgroundColor: '#2BB673',
+                width: '100%',
+                paddingTop: 51,
+                paddingBottom: 40
+            }
+        }
+    }),
     container:{
         flex: 1,
         alignItems: 'center',
         paddingBottom: 60
-    },
-    header:{
-        backgroundColor: '#2BB673',
-        width: '100%',
-        paddingTop: 25,
-        paddingBottom: 40
     },
     header_title:{
         fontFamily: 'Raleway',
@@ -110,7 +125,10 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
-        marginTop: 30
+        marginTop: 30,
+        shadowOpacity: 0.1,
+        shadowOffset: {width: 0, height: 4},
+        shadowRadius: 10,
     },
     recommendations_card_content:{
         position: 'absolute',
@@ -147,7 +165,10 @@ const styles = StyleSheet.create({
         marginTop: 30,
         width: 372,
         height: 99,
-        borderRadius: 20
+        borderRadius: 20,
+        shadowOpacity: 0.1,
+        shadowOffset: {width: 0, height: 4},
+        shadowRadius: 10,
     },
     journal_title:{
         fontFamily: 'Lato',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, StyleSheet, StatusBar, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View,Text, StyleSheet, StatusBar, Image, ScrollView, TouchableOpacity, Platform } from 'react-native';
 
 var month = new Date().getMonth() + 1;
 var day = new Date().getDate();
@@ -37,9 +37,9 @@ const Journal_9 = ({navigation}) =>{
             />
             <View style = {styles.header}>
                 <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                    <Image style = {{marginTop:20,marginLeft:25,}}source={require('../../assets/journal/back.png')}></Image >
+                    <Image style = {styles.headerBack} source={require('../../assets/journal/back.png')}></Image >
                 </TouchableOpacity>
-                <Text style = {{marginTop:20, color:"white", fontFamily: 'Lato', fontWeight: '700', fontSize: 20, alignSelf: 'center', position:'absolute'}}>NERVELI</Text>
+                <Text style = {styles.headerTitle}>NERVELI</Text>
                 <Text style = {styles.headerText}>{monthName} {day}, {year}</Text>
             </View>
             <Text style = {[styles.subHeaderText, {marginTop: 33, marginLeft: 28}]}>Your pain scale</Text>
@@ -84,20 +84,48 @@ const Journal_9 = ({navigation}) =>{
             <View style = {styles.subBubble}>
                 <Text style = {styles.subBubbleText}>{medication}</Text>
             </View>
+            <View style = {{marginTop: 100}}></View>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            headerBack: {
+                marginTop:20,
+                marginLeft:25,
+            },
+            headerTitle: {
+                marginTop:20,
+                color:"white",
+                fontFamily: 'Lato',
+                fontWeight: '700',
+                fontSize: 20,
+                alignSelf: 'center',
+                position:'absolute'
+            }
+        },
+        ios: {
+            headerBack: {
+                marginTop:56,
+                marginLeft:25,
+            },
+            headerTitle: {
+                marginTop:56,
+                color:"white",
+                fontFamily: 'Lato',
+                fontWeight: '700',
+                fontSize: 20,
+                alignSelf: 'center',
+                position:'absolute'
+            }
+        }
+    }),
     container:{
         flex:1,
         flexDirection: 'column',
         alignContent: 'center',
-    },
-    banner: {
-        backgroundColor: '#2BB673',
-        width: 428,
-        height: 79,
     },
     header: {
         backgroundColor: '#2BB673',

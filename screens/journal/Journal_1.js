@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Pressable, StatusBar, Image, ScrollView } from 'react-native';
+import { View,Text,StyleSheet,Pressable, StatusBar, Image, ScrollView, Platform } from 'react-native';
 
 var month = new Date().getMonth() + 1;
 var year = new Date().getFullYear();
@@ -28,6 +28,7 @@ const Journal_1 = ({navigation}) =>{
                 barStyle='light-content'
             />
             <View style = {styles.header}>
+            <Text style = {styles.header_title}>NERVELI</Text>
                 <Text style = {styles.headerText}>Ready to journal, Jane?</Text>
             </View>
             <View style = {styles.button}>
@@ -82,6 +83,51 @@ const Journal_1 = ({navigation}) =>{
 };
 
 const styles = StyleSheet.create({
+    ...Platform.select({
+        android: {
+            header: {
+                backgroundColor: '#2BB673',
+                width: "100%",
+                height: 97
+            },
+            statsCard: {
+                marginTop: 33,
+                backgroundColor: '#eef5ed',
+                width: "95%",
+                height: 307,
+                shadowOpacity: 0.1,
+                shadowOffset: {width: 0, height: 4},
+                shadowRadius: 10,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+            },
+        },
+        ios: {
+            header: {
+                backgroundColor: '#2BB673',
+                width: "100%",
+                height: 178
+            },
+            header_title:{
+                fontFamily: 'Lato',
+                fontWeight: 700,
+                fontSize: 20,
+                color: '#F8F8F8',
+                textAlign: 'center',
+                marginTop: 60
+            },
+            statsCard: {
+                marginTop: 33,
+                backgroundColor: '#eef5ed',
+                height: 307,
+                shadowOpacity: 0.1,
+                shadowOffset: {width: 0, height: 4},
+                shadowRadius: 10,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+            },
+        }
+    }),
     buttonfont:{
         color:'white',
         fontFamily:'Open Sans',
@@ -102,11 +148,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignContent: 'center',
         
-    },
-    header: {
-        backgroundColor: '#2BB673',
-        width: "100%",
-        height: 97
     },
     headerText: {
       color:"white",
@@ -149,16 +190,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Open Sans',
         fontWeight: '800',
         fontSize: 18,
-    },
-    statsCard: {
-        marginTop: 33,
-        backgroundColor: '#eef5ed',
-        width: "95%",
-        height: 307,
-        shadowOpacity: 0.1,
-        shadowOffset: {width: 0, height: 4},
-        shadowRadius: 10,
-        borderRadius: 20
     },
     statsText: {
         marginTop: 26,
